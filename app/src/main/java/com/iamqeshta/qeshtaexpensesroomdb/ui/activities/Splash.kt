@@ -1,4 +1,4 @@
-package com.iamqeshta.qeshtaexpensesroomdb
+package com.iamqeshta.qeshtaexpensesroomdb.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -20,8 +20,7 @@ class Splash : AppCompatActivity() {
 
     private fun openActivity(){
         Handler().postDelayed(Runnable {
-            val i = Intent(this@Splash, LoginActivity::class.java)
-            startActivity(i)
-        }, 3000)
+            startActivity(Intent(this@Splash, LoginActivity::class.java))
+        }, 1000)
     }
 }

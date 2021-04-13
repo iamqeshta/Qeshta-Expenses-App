@@ -2,4 +2,9 @@
     <string name="app_name">Qeshta Expenses</string>
     <string name="logo">logo</string>
     <string name="save_your_money">Save Your Money</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

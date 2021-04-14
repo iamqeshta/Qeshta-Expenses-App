@@ -23,12 +23,12 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         switchFragment(SettingsFragment())
-        binding.appBar.pageTitle.text = getString(R.string.setting)
+        binding.appBar.pageTitle.text = getString(R.string.settings)
         binding.bottomNav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_setting -> {
                     switchFragment(SettingsFragment())
-                    binding.appBar.pageTitle.text = getString(R.string.setting)
+                    binding.appBar.pageTitle.text = getString(R.string.settings)
                     return@setOnNavigationItemSelectedListener true
                 }
                 else -> {

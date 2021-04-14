@@ -19,7 +19,7 @@
             android:src="@drawable/ic_menu"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
+            app:tint="@color/background_light" />
 
         <TextView
             android:id="@+id/pageTitle"
@@ -30,7 +30,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/my_expenses"
-            android:textColor="@color/white"
+            android:textColor="@color/background_light"
             android:textSize="20sp"
             app:layout_constraintLeft_toRightOf="@id/menuIcon"
             app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +45,7 @@
             android:src="@drawable/ic_search"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
+            app:tint="@color/background_light" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

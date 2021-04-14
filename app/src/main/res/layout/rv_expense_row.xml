@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="152dp"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="@color/background_light"
     app:cardCornerRadius="4dp"
     app:cardUseCompatPadding="true"
     android:layout_marginTop="8dp"
@@ -30,9 +30,9 @@
             android:layout_marginTop="32dp"
             android:drawablePadding="4dp"
             android:text="Metro"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/primary_light"
             app:drawableStartCompat="@drawable/ic_place"
-            app:drawableTint="@color/teal_200"
+            app:drawableTint="@color/focus_action_light"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,9 +46,9 @@
             android:layout_marginBottom="32dp"
             android:drawablePadding="4dp"
             android:text="6/3/2021"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/primary_light"
             app:drawableStartCompat="@drawable/ic_date"
-            app:drawableTint="@color/teal_200"
+            app:drawableTint="@color/focus_action_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/placeTv" />
@@ -63,9 +63,9 @@
             android:background="@drawable/circle_money"
             android:gravity="center"
             android:text="150"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/system_bar_light_primary_dark"
             android:textSize="16sp"
-            app:drawableTint="@color/purple_700"
+            app:drawableTint="@color/system_bar_light_primary_dark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:drawableStartCompat="@drawable/ic_money" />
@@ -84,7 +84,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@id/delete"
             app:layout_constraintTop_toBottomOf="@id/moneyTv"
-            app:tint="@color/teal_200" />
+            app:tint="@color/focus_action_light" />
 
         <TextView
             android:gravity="center"
@@ -94,13 +94,13 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/teal_200"
+            android:backgroundTint="@color/focus_action_light"
             android:text="@string/delete"
             app:drawableStartCompat="@drawable/ic_delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/moneyTv"
-            app:tint="@color/teal_200" />
+            app:tint="@color/focus_action_light" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

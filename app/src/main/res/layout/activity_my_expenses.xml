@@ -58,11 +58,11 @@
         android:layout_margin="16dp"
         android:contentDescription="@string/add"
         android:tint="@android:color/white"
-        app:backgroundTint="@color/purple_700"
+        app:backgroundTint="@color/system_bar_light_primary_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:rippleColor="@color/white"
+        app:rippleColor="@color/background_light"
         app:srcCompat="@drawable/ic_add"
-        app:tint="@color/white" />
+        app:tint="@color/background_light" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

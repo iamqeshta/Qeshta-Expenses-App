@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QeshtaExpenses">
-        <activity android:name=".ui.activities.SignUpActivity"></activity>
+        <activity android:name=".ui.activities.MyExpensesActivity"></activity>
+        <activity android:name=".ui.activities.SignUpActivity" />
         <activity android:name=".ui.activities.LoginActivity" />
         <activity android:name=".ui.activities.Splash">
             <intent-filter>

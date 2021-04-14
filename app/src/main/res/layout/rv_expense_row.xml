@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="152dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/placeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:drawablePadding="4dp"
+            android:text="Metro"
+            android:textColor="@color/purple_500"
+            app:drawableStartCompat="@drawable/ic_place"
+            app:drawableTint="@color/teal_200"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/dateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:drawablePadding="4dp"
+            android:text="6/3/2021"
+            android:textColor="@color/purple_500"
+            app:drawableStartCompat="@drawable/ic_date"
+            app:drawableTint="@color/teal_200"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/placeTv" />
+
+        <TextView
+            android:padding="12dp"
+            android:id="@+id/moneyTv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/circle_money"
+            android:gravity="center"
+            android:text="150"
+            android:textColor="@color/purple_700"
+            android:textSize="16sp"
+            app:drawableTint="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:drawableStartCompat="@drawable/ic_money" />
+
+        <TextView
+            android:gravity="center"
+            android:textSize="14sp"
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/edit"
+            app:drawableStartCompat="@drawable/ic_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/delete"
+            app:layout_constraintTop_toBottomOf="@id/moneyTv"
+            app:tint="@color/teal_200" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/teal_200"
+            android:text="@string/delete"
+            app:drawableStartCompat="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/moneyTv"
+            app:tint="@color/teal_200" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

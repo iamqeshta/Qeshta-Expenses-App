@@ -10,4 +10,9 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="name">Name</string>
     <string name="mobile_number">Mobile Number</string>
+    <string name="add">Add</string>
+    <string name="menu">Menu</string>
+    <string name="search">Search</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
 </resources>

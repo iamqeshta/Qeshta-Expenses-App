@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Demo.BottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.BottomSheetDialog">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/add_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/add_a_new_expense"
+        android:textColor="@color/teal_200"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="@color/purple_500"
+        android:id="@+id/place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_new">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/placeEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:drawableStart="@drawable/ic_place"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/teal_200"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/place"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:textColor="@color/teal_200" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/place">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dateEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:drawableStart="@drawable/ic_date"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/teal_200"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/date"
+            android:imeOptions="actionNext"
+            android:inputType="date"
+            android:padding="16dp"
+            android:textColor="@color/teal_200" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/moneyEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:drawableStart="@drawable/ic_money"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/teal_200"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/money"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="@color/teal_200" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addBtn"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/save_expense"
+        android:textColor="@color/black"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/money" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancelBtn"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/cancel"
+        android:textColor="@color/black"
+        app:layout_constraintRight_toLeftOf="@id/addBtn"
+        app:layout_constraintTop_toBottomOf="@id/money" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

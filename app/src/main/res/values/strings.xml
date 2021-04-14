@@ -15,4 +15,11 @@
     <string name="search">Search</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
+    <string name="my_expenses">My Expenses</string>
+    <string name="add_a_new_expense">Add a new Expense</string>
+    <string name="place">Place</string>
+    <string name="date">Date</string>
+    <string name="money">Money</string>
+    <string name="save_expense">Save Expense</string>
+    <string name="cancel">Cancel</string>
 </resources>

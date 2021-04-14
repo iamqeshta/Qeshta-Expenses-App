@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.iamqeshta.qeshtaexpensesroomdb.adapters.ExpenseAdapter
 import com.iamqeshta.qeshtaexpensesroomdb.databinding.ActivityMyExpensesBinding
 import com.iamqeshta.qeshtaexpensesroomdb.models.Expense
+import com.iamqeshta.qeshtaexpensesroomdb.ui.fragments.BottomSheetDialog
 import java.util.*
 
 class MyExpensesActivity : AppCompatActivity() {
@@ -23,10 +24,10 @@ class MyExpensesActivity : AppCompatActivity() {
         val adapter = ExpenseAdapter(this, expensesList)
         binding.ExpenseListRv.adapter = adapter
 
-        /*binding.fab.setOnClickListener {
+        binding.fab.setOnClickListener {
             val bottomSheetDialog = BottomSheetDialog()
             bottomSheetDialog.show(supportFragmentManager, bottomSheetDialog.tag)
-        }*/
+        }
     }
 
     fun populateArray(){

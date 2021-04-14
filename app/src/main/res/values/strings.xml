@@ -22,4 +22,22 @@
     <string name="money">Money</string>
     <string name="save_expense">Save Expense</string>
     <string name="cancel">Cancel</string>
+    <string name="setting">Setting</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save">Save</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="display_settings">Display Settings</string>
+    <string name="language">Language</string>
+    <string name="english">English</string>
+    <string name="arabic">Arabic</string>
+    <string name="theme">Theme</string>
+    <string name="light_dark">Light / Dark</string>
+    <string name="notifications">Notifications</string>
+    <string name="remind_me">Remind me</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="privacy">Privacy</string>
+    <string name="logout">Logout</string>
 </resources>

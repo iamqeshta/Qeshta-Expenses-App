@@ -1,7 +1,10 @@
 package com.iamqeshta.qeshtaexpensesroomdb.ui.activities
 
+import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iamqeshta.qeshtaexpensesroomdb.adapters.ExpenseAdapter
 import com.iamqeshta.qeshtaexpensesroomdb.databinding.ActivityMyExpensesBinding
@@ -18,6 +21,14 @@ class MyExpensesActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        binding.appBar.menuIcon.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
+
+        binding.appBar.searchIcon.setOnClickListener {
+            getCalender()
+        }
+
         val lm = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.ExpenseListRv.layoutManager = lm
         populateArray()
@@ -30,7 +41,7 @@ class MyExpensesActivity : AppCompatActivity() {
         }
     }
 
-    fun populateArray(){
+    private fun populateArray(){
         expensesList.add(Expense("Metro", Calendar.getInstance().time,100))
         expensesList.add(Expense("Restaurant", Calendar.getInstance().time,200))
         expensesList.add(Expense("Mate City", Calendar.getInstance().time,300))
@@ -41,6 +52,19 @@ class MyExpensesActivity : AppCompatActivity() {
         expensesList.add(Expense("Shopping", Calendar.getInstance().time,800))
         expensesList.add(Expense("Hospital", Calendar.getInstance().time,900))
         expensesList.add(Expense("Clothes", Calendar.getInstance().time,1000))
+    }
+
+    private fun getCalender(){
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        DatePickerDialog(this, { view, year, monthOfYear, dayOfMonth ->
+            // Display Selected date in TextView
+            //Toast.makeText(this, SimpleDateFormat("MM/dd/yyyy", Locale.US).format(c.time), Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "$dayOfMonth / $month / $year", Toast.LENGTH_SHORT).show()
+        }, year, month, day).show()
     }
 
 }

@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iamqeshta.qeshtaexpensesroomdb.adapters.ExpenseAdapter
@@ -35,6 +36,8 @@ class MyExpensesActivity : AppCompatActivity() {
         val adapter = ExpenseAdapter(this, expensesList)
         binding.ExpenseListRv.adapter = adapter
 
+        //checkEmptyStatus(expensesList)
+
         binding.fab.setOnClickListener {
             val bottomSheetDialog = BottomSheetDialog()
             bottomSheetDialog.show(supportFragmentManager, bottomSheetDialog.tag)
@@ -65,6 +68,16 @@ class MyExpensesActivity : AppCompatActivity() {
             //Toast.makeText(this, SimpleDateFormat("MM/dd/yyyy", Locale.US).format(c.time), Toast.LENGTH_SHORT).show()
             Toast.makeText(this, "$dayOfMonth / $month / $year", Toast.LENGTH_SHORT).show()
         }, year, month, day).show()
+    }
+
+    private fun checkEmptyStatus(list: List<Expense>) {
+        if (list.isEmpty()) {
+            binding.linearEmptyStatus.visibility = View.VISIBLE
+            binding.ExpenseListRv.visibility = View.GONE
+        } else {
+            binding.linearEmptyStatus.visibility = View.GONE
+            binding.ExpenseListRv.visibility = View.VISIBLE
+        }
     }
 
 }

@@ -40,4 +40,5 @@
     <string name="off">Off</string>
     <string name="privacy">Privacy</string>
     <string name="logout">Logout</string>
+    <string name="no_expenses">No Expenses</string>
 </resources>

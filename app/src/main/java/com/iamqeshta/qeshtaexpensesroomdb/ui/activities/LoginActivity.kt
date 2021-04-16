@@ -15,7 +15,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.emailEdt.setOnFocusChangeListener { v, hasFocus ->
-            // test commit
+            // test commit 2
             
         }
 

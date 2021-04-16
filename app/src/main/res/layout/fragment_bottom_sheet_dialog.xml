@@ -23,8 +23,6 @@
     </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textfield.TextInputLayout
-        app:boxBackgroundMode="filled"
-        app:boxBackgroundColor="@color/primary_light"
         android:id="@+id/place"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -17,11 +17,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            app:tint="@color/primary_light"
+            android:backgroundTint="@color/primary_light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/logo"
-            android:src="@drawable/ic_logo" />
+            android:background="@drawable/ic_logo" />
 
         <TextView
             android:textColor="@color/primary_text_light"

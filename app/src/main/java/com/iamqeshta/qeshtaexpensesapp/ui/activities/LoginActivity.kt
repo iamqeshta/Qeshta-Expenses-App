@@ -13,10 +13,6 @@ class LoginActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.emailEdt.setOnFocusChangeListener { v, hasFocus ->
-            
-        }
-
         binding.loginBtn.setOnClickListener {
             startActivity(Intent(this@LoginActivity, MyExpensesActivity::class.java))
         }

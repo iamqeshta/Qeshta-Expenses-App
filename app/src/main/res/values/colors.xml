@@ -11,7 +11,7 @@
     <color name="primary_text_light">#212121</color>
     <color name="secondary_text_icon_light">#b3b3b3</color>
     <color name="background_light">#ffffff</color>
-    <color name="row_bg_light">#ffffff</color>
+    <color name="row_bg_light">#f6f6f6</color>
 
     <!--Dark Colors-->
     <color name="system_bar_dark">#1b5e1f</color>

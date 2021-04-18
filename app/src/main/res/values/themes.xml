@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.QeshtaExpenses" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Demo.BottomSheetDialog</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary_light</item>
         <item name="colorPrimaryVariant">@color/system_bar_light_primary_dark</item>
@@ -30,4 +31,23 @@
     <style name="Widget.Demo.BottomSheet" parent="Widget.MaterialComponents.BottomSheet">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Demo</item>
     </style>
+
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+        <item name="android:textColorPrimaryInverse">@color/background_light</item> <!-- header date, month color && calendar text highlight color -->
+        <item name="android:textColorSecondaryInverse">@color/background_light</item> <!-- header year color -->
+
+        <item name="android:colorAccent">@color/system_bar_light_primary_dark</item> <!-- button color -->
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerButtonStyle</item>
+
+    </style>
+    <style name="DatePickerButtonStyle" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/focus_action_light</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/primary_light</item> <!-- header background color -->
+    </style>
+
 </resources>

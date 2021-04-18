@@ -7,6 +7,7 @@
     tools:context=".ui.fragments.SettingsFragment">
 
     <com.google.android.material.textview.MaterialTextView
+        android:textColor="@color/primary_text_light"
         android:id="@+id/displaySettingsTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,6 +21,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
+        app:drawableTint="@color/primary_icon_light"
+        android:textColor="@color/primary_text_light"
         android:id="@+id/languageTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,6 +48,7 @@
         app:layout_constraintTop_toBottomOf="@id/languageTv">
 
         <com.google.android.material.radiobutton.MaterialRadioButton
+            android:textColor="@color/primary_text_light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -53,6 +57,7 @@
             android:text="@string/english" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
+            android:textColor="@color/primary_text_light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
@@ -61,6 +66,8 @@
     </RadioGroup>
 
     <com.google.android.material.textview.MaterialTextView
+        app:drawableTint="@color/primary_icon_light"
+        android:textColor="@color/primary_text_light"
         android:id="@+id/themeTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@id/languageRg" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
+        android:textColor="@color/primary_text_light"
         android:id="@+id/themeSw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,6 +95,7 @@
         app:layout_constraintTop_toBottomOf="@id/themeTv" />
 
     <com.google.android.material.card.MaterialCardView
+        android:textColor="@color/secondary_text_icon_light"
         android:id="@+id/first_Line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -98,6 +107,7 @@
         app:layout_constraintTop_toBottomOf="@id/themeSw" />
 
     <com.google.android.material.textview.MaterialTextView
+        android:textColor="@color/primary_text_light"
         android:id="@+id/notificationsTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -111,6 +121,8 @@
         app:layout_constraintTop_toBottomOf="@id/first_Line" />
 
     <com.google.android.material.textview.MaterialTextView
+        app:drawableTint="@color/primary_icon_light"
+        android:textColor="@color/primary_text_light"
         android:id="@+id/remindTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -136,6 +148,8 @@
         app:layout_constraintTop_toBottomOf="@id/remindTv">
 
         <com.google.android.material.textview.MaterialTextView
+            app:drawableTint="@color/primary_icon_light"
+            android:textColor="@color/primary_text_light"
             android:id="@+id/notificationsOnTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -147,6 +161,8 @@
             android:text="@string/on" />
 
         <com.google.android.material.textview.MaterialTextView
+            app:drawableTint="@color/primary_icon_light"
+            android:textColor="@color/primary_text_light"
             android:id="@+id/notificationsOffTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -159,6 +175,7 @@
     </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
+        android:textColor="@color/secondary_text_icon_light"
         android:id="@+id/second_Line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -170,6 +187,8 @@
         app:layout_constraintTop_toBottomOf="@id/notifications" />
 
     <com.google.android.material.textview.MaterialTextView
+        app:drawableTint="@color/primary_icon_light"
+        android:textColor="@color/primary_text_light"
         android:id="@+id/privacyTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -185,6 +204,8 @@
         app:layout_constraintTop_toBottomOf="@id/second_Line" />
 
     <com.google.android.material.textview.MaterialTextView
+        app:drawableTint="@color/primary_icon_light"
+        android:textColor="@color/primary_text_light"
         android:id="@+id/logoutTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

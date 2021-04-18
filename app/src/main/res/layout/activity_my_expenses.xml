@@ -24,11 +24,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:contentDescription="@string/empty"
             android:src="@drawable/ic_empty" />
 
         <TextView
@@ -57,8 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:contentDescription="@string/add"
-        android:tint="@android:color/white"
-        app:backgroundTint="@color/system_bar_light_primary_dark"
+        android:tint="@color/background_light"
+        app:backgroundTint="@color/focus_action_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:rippleColor="@color/background_light"

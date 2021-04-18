@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.adapters.ExpenseAdapter
 import com.iamqeshta.qeshtaexpensesapp.databinding.ActivityMyExpensesBinding
 import com.iamqeshta.qeshtaexpensesapp.models.Expense
@@ -64,6 +65,7 @@ class MyExpensesActivity : AppCompatActivity() {
         val day = c.get(Calendar.DAY_OF_MONTH)
 
         DatePickerDialog(this, { view, year, monthOfYear, dayOfMonth ->
+            view.setBackgroundColor(getColor(R.color.primary_light))
             // Display Selected date in TextView
             //Toast.makeText(this, SimpleDateFormat("MM/dd/yyyy", Locale.US).format(c.time), Toast.LENGTH_SHORT).show()
             Toast.makeText(this, "$dayOfMonth / $month / $year", Toast.LENGTH_SHORT).show()

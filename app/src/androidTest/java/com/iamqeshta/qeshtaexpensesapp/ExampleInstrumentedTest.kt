@@ -1,4 +1,4 @@
-package com.iamqeshta.qeshtaexpensesroomdb
+package com.iamqeshta.qeshtaexpensesapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

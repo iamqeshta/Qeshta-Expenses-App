@@ -1,10 +1,9 @@
-package com.iamqeshta.qeshtaexpensesroomdb.ui.activities
+package com.iamqeshta.qeshtaexpensesapp.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import com.iamqeshta.qeshtaexpensesroomdb.databinding.ActivityLoginBinding
+import com.iamqeshta.qeshtaexpensesapp.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding

@@ -1,11 +1,11 @@
-package com.iamqeshta.qeshtaexpensesroomdb.adapters
+package com.iamqeshta.qeshtaexpensesapp.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.iamqeshta.qeshtaexpensesroomdb.databinding.RvExpenseRowBinding
-import com.iamqeshta.qeshtaexpensesroomdb.models.Expense
+import com.iamqeshta.qeshtaexpensesapp.databinding.RvExpenseRowBinding
+import com.iamqeshta.qeshtaexpensesapp.models.Expense
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList

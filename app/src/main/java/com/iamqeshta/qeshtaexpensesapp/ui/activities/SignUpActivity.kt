@@ -1,8 +1,8 @@
-package com.iamqeshta.qeshtaexpensesroomdb.ui.activities
+package com.iamqeshta.qeshtaexpensesapp.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.iamqeshta.qeshtaexpensesroomdb.databinding.ActivitySignUpBinding
+import com.iamqeshta.qeshtaexpensesapp.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding

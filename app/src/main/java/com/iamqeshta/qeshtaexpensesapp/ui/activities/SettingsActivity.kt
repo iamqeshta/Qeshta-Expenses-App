@@ -1,13 +1,13 @@
-package com.iamqeshta.qeshtaexpensesroomdb.ui.activities
+package com.iamqeshta.qeshtaexpensesapp.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.iamqeshta.qeshtaexpensesroomdb.R
-import com.iamqeshta.qeshtaexpensesroomdb.databinding.ActivitySettingsBinding
-import com.iamqeshta.qeshtaexpensesroomdb.ui.fragments.ProfileFragment
-import com.iamqeshta.qeshtaexpensesroomdb.ui.fragments.SettingsFragment
+import com.iamqeshta.qeshtaexpensesapp.R
+import com.iamqeshta.qeshtaexpensesapp.databinding.ActivitySettingsBinding
+import com.iamqeshta.qeshtaexpensesapp.ui.fragments.ProfileFragment
+import com.iamqeshta.qeshtaexpensesapp.ui.fragments.SettingsFragment
 
 class SettingsActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySettingsBinding

@@ -1,4 +1,4 @@
-package com.iamqeshta.qeshtaexpensesroomdb
+package com.iamqeshta.qeshtaexpensesapp
 
 import org.junit.Test
 

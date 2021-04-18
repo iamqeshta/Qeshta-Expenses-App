@@ -1,4 +1,4 @@
-package com.iamqeshta.qeshtaexpensesroomdb.models
+package com.iamqeshta.qeshtaexpensesapp.models
 
 import java.util.*
 

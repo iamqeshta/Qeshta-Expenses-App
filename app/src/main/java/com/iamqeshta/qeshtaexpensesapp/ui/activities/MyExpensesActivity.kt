@@ -1,4 +1,4 @@
-package com.iamqeshta.qeshtaexpensesroomdb.ui.activities
+package com.iamqeshta.qeshtaexpensesapp.ui.activities
 
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -7,10 +7,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.iamqeshta.qeshtaexpensesroomdb.adapters.ExpenseAdapter
-import com.iamqeshta.qeshtaexpensesroomdb.databinding.ActivityMyExpensesBinding
-import com.iamqeshta.qeshtaexpensesroomdb.models.Expense
-import com.iamqeshta.qeshtaexpensesroomdb.ui.fragments.BottomSheetDialog
+import com.iamqeshta.qeshtaexpensesapp.adapters.ExpenseAdapter
+import com.iamqeshta.qeshtaexpensesapp.databinding.ActivityMyExpensesBinding
+import com.iamqeshta.qeshtaexpensesapp.models.Expense
+import com.iamqeshta.qeshtaexpensesapp.ui.fragments.BottomSheetDialog
 import java.util.*
 
 class MyExpensesActivity : AppCompatActivity() {

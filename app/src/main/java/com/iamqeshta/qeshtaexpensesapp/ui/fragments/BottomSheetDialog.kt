@@ -1,11 +1,11 @@
-package com.iamqeshta.qeshtaexpensesroomdb.ui.fragments
+package com.iamqeshta.qeshtaexpensesapp.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.iamqeshta.qeshtaexpensesroomdb.databinding.FragmentBottomSheetDialogBinding
+import com.iamqeshta.qeshtaexpensesapp.databinding.FragmentBottomSheetDialogBinding
 
 class BottomSheetDialog : BottomSheetDialogFragment() {
     private lateinit var bottomSheetDialogBinding: FragmentBottomSheetDialogBinding

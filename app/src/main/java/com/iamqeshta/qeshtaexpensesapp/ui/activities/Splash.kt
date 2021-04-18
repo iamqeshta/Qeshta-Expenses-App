@@ -1,10 +1,10 @@
-package com.iamqeshta.qeshtaexpensesroomdb.ui.activities
+package com.iamqeshta.qeshtaexpensesapp.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import com.iamqeshta.qeshtaexpensesroomdb.databinding.ActivitySplashBinding
+import com.iamqeshta.qeshtaexpensesapp.databinding.ActivitySplashBinding
 
 
 class Splash : AppCompatActivity() {

@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.akexorcist.localizationactivity.core.LanguageSetting
 import com.iamqeshta.qeshtaexpensesapp.databinding.RvExpenseRowBinding
 import com.iamqeshta.qeshtaexpensesapp.models.Expense
 import java.text.SimpleDateFormat

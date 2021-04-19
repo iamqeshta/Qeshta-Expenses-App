@@ -5,12 +5,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import com.akexorcist.localizationactivity.ui.LocalizationActivity
 import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.databinding.ActivitySettingsBinding
 import com.iamqeshta.qeshtaexpensesapp.ui.fragments.ProfileFragment
 import com.iamqeshta.qeshtaexpensesapp.ui.fragments.SettingsFragment
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : LocalizationActivity() {
     private lateinit var binding: ActivitySettingsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

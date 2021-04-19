@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.akexorcist.localizationactivity.core.LanguageSetting.setLanguage
+import com.akexorcist.localizationactivity.ui.LocalizationActivity
 import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.adapters.ExpenseAdapter
 import com.iamqeshta.qeshtaexpensesapp.databinding.ActivityMyExpensesBinding
@@ -14,7 +16,7 @@ import com.iamqeshta.qeshtaexpensesapp.models.Expense
 import com.iamqeshta.qeshtaexpensesapp.ui.fragments.BottomSheetDialog
 import java.util.*
 
-class MyExpensesActivity : AppCompatActivity() {
+class MyExpensesActivity : LocalizationActivity() {
     private lateinit var binding: ActivityMyExpensesBinding
     private val expensesList = ArrayList<Expense>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,10 +34,10 @@ class MyExpensesActivity : AppCompatActivity() {
         }
 
         val lm = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        binding.ExpenseListRv.layoutManager = lm
+        binding.expensesRv.layoutManager = lm
         populateArray()
         val adapter = ExpenseAdapter(this, expensesList)
-        binding.ExpenseListRv.adapter = adapter
+        binding.expensesRv.adapter = adapter
 
         //checkEmptyStatus(expensesList)
 
@@ -43,6 +45,7 @@ class MyExpensesActivity : AppCompatActivity() {
             val bottomSheetDialog = BottomSheetDialog()
             bottomSheetDialog.show(supportFragmentManager, bottomSheetDialog.tag)
         }
+
     }
 
     private fun populateArray(){
@@ -68,10 +71,10 @@ class MyExpensesActivity : AppCompatActivity() {
     private fun checkEmptyStatus(list: List<Expense>) {
         if (list.isEmpty()) {
             binding.linearEmptyStatus.visibility = View.VISIBLE
-            binding.ExpenseListRv.visibility = View.GONE
+            binding.expensesRv.visibility = View.GONE
         } else {
             binding.linearEmptyStatus.visibility = View.GONE
-            binding.ExpenseListRv.visibility = View.VISIBLE
+            binding.expensesRv.visibility = View.VISIBLE
         }
     }
 

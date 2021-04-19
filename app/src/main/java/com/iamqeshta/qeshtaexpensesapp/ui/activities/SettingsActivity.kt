@@ -18,7 +18,7 @@ class SettingsActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         binding.appBar.searchIcon.visibility = View.INVISIBLE
-        binding.appBar.menuIcon.setImageResource(R.drawable.ic_back)
+        binding.appBar.menuIcon.setBackgroundResource(R.drawable.ic_back)
         binding.appBar.menuIcon.setOnClickListener {
             finish()
         }

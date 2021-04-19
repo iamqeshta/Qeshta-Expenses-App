@@ -14,8 +14,6 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
-    <!--app:cardElevation="4dp"-->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -28,7 +26,7 @@
             android:layout_marginTop="32dp"
             android:drawablePadding="4dp"
             android:gravity="center"
-            android:text="Metro"
+            android:text="@string/example_place"
             android:textColor="@color/primary_text_light"
             app:drawableStartCompat="@drawable/ic_place"
             app:drawableTint="@color/primary_icon_light"
@@ -44,7 +42,7 @@
             android:layout_marginBottom="32dp"
             android:drawablePadding="4dp"
             android:gravity="center"
-            android:text="6/3/2021"
+            android:text="@string/example_date"
             android:textColor="@color/primary_text_light"
             app:drawableStartCompat="@drawable/ic_date"
             app:drawableTint="@color/primary_icon_light"
@@ -57,11 +55,11 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="40dp"
             android:background="@drawable/circle_money"
             android:gravity="center"
             android:padding="12dp"
-            android:text="150"
+            android:text="@string/example_money"
             android:textColor="@color/primary_text_light"
             android:textSize="16sp"
             app:drawableStartCompat="@drawable/ic_money"
@@ -69,38 +67,43 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/edit"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:text="@string/edit"
-            android:textColor="@color/primary_text_light"
-            android:textSize="14sp"
-            app:drawableStartCompat="@drawable/ic_edit"
-            app:drawableTint="@color/focus_action_light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/delete"
-            app:layout_constraintTop_toBottomOf="@id/moneyTv" />
-
-        <TextView
-            android:id="@+id/delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:text="@string/delete"
-            android:textColor="@color/primary_text_light"
-            app:drawableStartCompat="@drawable/ic_delete"
-            app:drawableTint="@color/focus_action_light"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="end"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/moneyTv" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/moneyTv">
+
+            <TextView
+                android:id="@+id/edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="@string/edit"
+                android:textColor="@color/primary_text_light"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_edit"
+                app:drawableTint="@color/focus_action_light" />
+
+            <TextView
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/delete"
+                android:textColor="@color/primary_text_light"
+                app:drawableStartCompat="@drawable/ic_delete"
+                app:drawableTint="@color/focus_action_light" />
+
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

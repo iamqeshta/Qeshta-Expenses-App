@@ -46,16 +46,9 @@ class MyExpensesActivity : AppCompatActivity() {
     }
 
     private fun populateArray(){
-        expensesList.add(Expense("Metro", Calendar.getInstance().time,100))
-        expensesList.add(Expense("Restaurant", Calendar.getInstance().time,200))
-        expensesList.add(Expense("Mate City", Calendar.getInstance().time,300))
-        expensesList.add(Expense("Bakery", Calendar.getInstance().time,400))
-        expensesList.add(Expense("Fees", Calendar.getInstance().time,500))
-        expensesList.add(Expense("College Fees", Calendar.getInstance().time,600))
-        expensesList.add(Expense("Books", Calendar.getInstance().time,700))
-        expensesList.add(Expense("Shopping", Calendar.getInstance().time,800))
-        expensesList.add(Expense("Hospital", Calendar.getInstance().time,900))
-        expensesList.add(Expense("Clothes", Calendar.getInstance().time,1000))
+        for (i in 1..10){
+            expensesList.add(Expense(resources.getString(R.string.example_place), Calendar.getInstance().time,100))
+        }
     }
 
     private fun getCalender(){

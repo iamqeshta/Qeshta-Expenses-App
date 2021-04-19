@@ -26,13 +26,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="72dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/my_expenses"
             android:textColor="@color/background_light"
             android:textSize="20sp"
-            app:layout_constraintLeft_toRightOf="@id/menuIcon"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView

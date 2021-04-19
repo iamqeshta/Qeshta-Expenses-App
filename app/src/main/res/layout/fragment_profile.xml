@@ -57,6 +57,7 @@
         app:startIconDrawable="@drawable/ic_phone">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:inputType="phone"
             android:textColor="@color/primary_text_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,6 +81,7 @@
         app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:inputType="textEmailAddress"
             android:textColor="@color/primary_text_light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

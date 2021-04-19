@@ -31,8 +31,11 @@
     <string name="save_expense">Save Expense</string>
     <string name="cancel">Cancel</string>
     <string name="place">Place</string>
+    <string name="example_place">Mall Arab</string>
     <string name="money">Money</string>
+    <string name="example_money">100</string>
     <string name="date">Date</string>
+    <string name="example_date">19/4/2021</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
 

@@ -8,11 +8,7 @@
 
     <include
         android:id="@+id/app_bar"
-        layout="@layout/app_main_bar"
-        app:layout_constraintBottom_toTopOf="@id/ExpenseListRv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        layout="@layout/app_main_bar" />
 
     <LinearLayout
         android:id="@+id/linearEmptyStatus"
@@ -44,13 +40,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ExpenseListRv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:paddingBottom="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/app_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/rv_expense_row" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

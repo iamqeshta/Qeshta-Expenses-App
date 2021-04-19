@@ -1,0 +1,57 @@
+<resources>
+    <!--Splash, Login, Sign Up-->
+    <string name="logo">لوجو</string>
+    <string name="app_name">Qeshta Expenses</string>
+    <string name="save_your_money">Save Your Money</string>
+
+    <!--Login, Sign Up, Profile-->
+    <string name="profile">الملف الشخصي</string>
+    <string name="update_profile">تحديث البيانات الشخصية</string>
+    <string name="name">الإسم</string>
+    <string name="mobile_number">رقم الهاتف</string>
+    <string name="email">الإيميل</string>
+    <string name="password">كلمة المرور</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="remember_me">تذكرني</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="sign_up">إنشاء حساب</string>
+    <string name="save">حفظ</string>
+
+    <!--Home-->
+    <string name="menu">قائمة</string>
+    <string name="my_expenses">مصروفاتي</string>
+    <string name="search">بحث</string>
+    <string name="no_expenses">لا يوجد مصروفات</string>
+    <string name="add">إضافة</string>
+    <string name="empty">فارع</string>
+
+    <!--Bottom Sheet Dialog, Row-->
+    <string name="add_a_new_expense">إضافة مصروف جديد</string>
+    <string name="edit_expense">تعديل المصروف</string>
+    <string name="save_expense">حفظ المصروف</string>
+    <string name="cancel">إالغاء</string>
+    <string name="place">المكان</string>
+    <string name="example_place">مول العرب</string>
+    <string name="money">المصروف</string>
+    <string name="example_money">100</string>
+    <string name="date">التاريخ</string>
+    <string name="example_date">19/4/2021</string>
+    <string name="edit">تعديل</string>
+    <string name="delete">حذف</string>
+
+    <!--Settings-->
+    <string name="settings">الإعدادات</string>
+    <string name="display_settings">إعدادات العرض</string>
+    <string name="language">اللغة</string>
+    <string name="english">الإنجليزية</string>
+    <string name="arabic">العربية</string>
+    <string name="theme">المظهر</string>
+    <string name="light_dark">فاتح / داكن</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="remind_me">ذكرني</string>
+    <string name="on">تشغيل</string>
+    <string name="off">إيقاف</string>
+    <string name="privacy">الخصوصية</string>
+    <string name="logout">تسجيل الخروج</string>
+
+</resources>

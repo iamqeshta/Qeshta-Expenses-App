@@ -35,17 +35,15 @@ class SettingsFragment : Fragment() {
         binding.englishRb.setOnClickListener { changeLanguage("en") }
         binding.arabicRb.setOnClickListener { changeLanguage("ar") }
 
+        checkTheme()
+        binding.themeSw.setOnClickListener {
+            if(binding.themeSw.isChecked)
+                changeTheme("Dark")
+            else
+                changeTheme("Light")
+        }
+
         return binding.root
-    }
-
-    private fun changeLanguage(lang: String) {
-        setLanguage(activity!!, Locale(lang))
-        val edit = sharedPreferences.edit()
-        edit.putString("LANGUAGE", lang)
-        edit.apply()
-        startActivity(Intent(activity!!, Splash::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP ))
-        //activity!!.finish()
-
     }
 
     private fun checkLanguage() {
@@ -55,27 +53,50 @@ class SettingsFragment : Fragment() {
             binding.arabicRb.isChecked = true
     }
 
-    private fun triggerRestart(context: Activity) {
-        val intent = Intent(context, Splash::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        context.startActivity(intent)
-        context.finish()
-        Runtime.getRuntime().exit(0)
+    private fun changeLanguage(lang: String) {
+        setLanguage(activity!!, Locale(lang))
+        val edit = sharedPreferences.edit()
+        edit.putString("LANGUAGE", lang)
+        edit.apply()
+        startActivity(Intent(activity!!, Splash::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP ))
     }
 
-    private fun dialog() {
-        val dialog = AlertDialog.Builder(activity!!)
-        dialog.setTitle("Change Language : Restart Application")
-        dialog.setMessage("Are you sure you want to exit?")
-        dialog.setIcon(R.drawable.ic_back)
-        dialog.setPositiveButton("Yes") { p0, p1 ->
+    private fun changeTheme(theme: String) {
+        val edit = sharedPreferences.edit()
+        edit.putString("THEME", theme)
+        edit.apply()
+        startActivity(Intent(activity!!, Splash::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP ))
+    }
 
+    private fun checkTheme() {
+        if (sharedPreferences.getString("THEME", null) == "Light"){
+            binding.themeSw.isChecked = false
+            light()
         }
-        dialog.setNegativeButton("No") { p0, p1 -> }
+        else if (sharedPreferences.getString("THEME", null) == "Dark"){
+            binding.themeSw.isChecked = true
+            dark()
+        }
+    }
+
+    private fun light(){
+
+    }
+
+    private fun dark(){
+        binding.root.setBackgroundColor(resources.getColor(R.color.background_dark, null))
+    }
+
+    private fun confirmDialog(lang: String) {
+        val dialog = AlertDialog.Builder(activity!!)
+        dialog.setTitle("Title")
+        dialog.setMessage("Message")
+        dialog.setIcon(R.drawable.ic_logo)
+        dialog.setPositiveButton("Yes") { _, _ -> }
+        dialog.setNegativeButton("No") { _, _ -> }
         val alertDialog: AlertDialog = dialog.create()
         alertDialog.show()
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

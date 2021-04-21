@@ -8,4 +8,5 @@ class MyApplication : LocalizationApplication() {
     override fun getDefaultLanguage(): Locale {
         return Locale.ENGLISH
     }
+
 }

@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.iamqeshta.qeshtaexpensesapp">
 
     <application
+        android:name=".common.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.QeshtaExpenses">
-        <activity android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.SettingsActivity"> </activity>
-        <activity android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.MyExpensesActivity" />
-        <activity android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.SignUpActivity" />
-        <activity android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.LoginActivity" />
-        <activity android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.Splash">
+        android:theme="@style/Theme.QeshtaExpenses"
+        tools:ignore="AllowBackup">
+        <activity
+            android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.SettingsActivity"
+            android:configChanges="uiMode" />
+        <activity
+            android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.MyExpensesActivity"
+            android:configChanges="uiMode" />
+        <activity
+            android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.SignUpActivity"
+            android:configChanges="uiMode" />
+        <activity
+            android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.LoginActivity"
+            android:configChanges="uiMode" />
+        <activity
+            android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.Splash"
+            android:configChanges="uiMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

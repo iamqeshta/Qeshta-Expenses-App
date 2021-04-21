@@ -7,7 +7,7 @@
     tools:context=".ui.activities.LoginActivity">
 
     <LinearLayout
-        android:id="@+id/logo"
+        android:id="@+id/container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -18,28 +18,31 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/logo"
+            style="@style/MyLogoStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_logo"
-            android:backgroundTint="@color/primary_light"
             android:contentDescription="@string/logo" />
 
         <TextView
+            android:id="@+id/appName"
+            style="@style/PrimaryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/app_name"
-            android:textColor="@color/primary_text_light"
             android:textSize="24sp" />
 
         <TextView
+            android:id="@+id/appSlogan"
+            style="@style/SecondaryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/save_your_money"
-            android:textColor="@color/secondary_text_icon_light"
             android:textSize="16sp" />
 
     </LinearLayout>
@@ -55,18 +58,18 @@
         android:hint="@string/email"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo">
+        app:layout_constraintTop_toBottomOf="@id/container">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailEdt"
+            style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="12dp"
             android:fontFamily="@font/roboto_regular"
-            android:singleLine="true"
             android:inputType="textEmailAddress"
-            android:textColor="@color/primary_text_light" />
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,27 +89,27 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordEdt"
+            style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_password"
             android:drawablePadding="12dp"
             android:fontFamily="@font/roboto_regular"
             android:inputType="textPassword"
-            android:singleLine="true"
-            android:textColor="@color/primary_text_light" />
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/remember_Password"
+        style="@style/PrimaryText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/remember_me"
-        android:textColor="@color/primary_text_light"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password">
@@ -115,6 +118,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginBtn"
+        style="@style/ButtonLogin"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
@@ -122,17 +126,15 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/login"
-        android:textColor="@color/primary_text_light"
-        app:backgroundTint="@color/background_light"
         app:cornerRadius="4dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/remember_Password"
-        app:strokeColor="@color/primary_light"
         app:strokeWidth="2dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/sign_UpBtn"
+        style="@style/ButtonSignUp"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
@@ -140,7 +142,6 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/sign_up"
-        android:textColor="@color/background_light"
         app:cornerRadius="4dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

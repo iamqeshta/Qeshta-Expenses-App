@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akexorcist.localizationactivity.core.LanguageSetting.setLanguage
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
@@ -61,7 +62,6 @@ class MyExpensesActivity : LocalizationActivity() {
         val day = c.get(Calendar.DAY_OF_MONTH)
 
         DatePickerDialog(this, { view, year, monthOfYear, dayOfMonth ->
-            view.setBackgroundColor(getColor(R.color.primary_light))
             // Display Selected date in TextView
             //Toast.makeText(this, SimpleDateFormat("MM/dd/yyyy", Locale.US).format(c.time), Toast.LENGTH_SHORT).show()
             Toast.makeText(this, "$dayOfMonth / $month / $year", Toast.LENGTH_SHORT).show()

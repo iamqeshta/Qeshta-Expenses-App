@@ -4,8 +4,8 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.databinding.ActivitySplashBinding
@@ -25,21 +25,24 @@ class Splash : AppCompatActivity() {
 
     }
 
-    private fun openActivity(){
+    private fun openActivity() {
         Handler().postDelayed(Runnable {
             startActivity(Intent(this@Splash, LoginActivity::class.java))
         }, 1000)
     }
 
     private fun checkTheme() {
-        if (sharedPreferences.getString("THEME", null) == "Light")
+        if (sharedPreferences.getString("THEME", null) == "Light") {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             light()
-        else if (sharedPreferences.getString("THEME", null) == "Dark")
+        }
+        else if (sharedPreferences.getString("THEME", null) == "Dark") {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             dark()
-
+        }
     }
 
-    private fun light(){
+    private fun light() {
         window.statusBarColor = ContextCompat.getColor(this, R.color.system_bar_light_primary_dark)
         binding.root.setBackgroundColor(resources.getColor(R.color.background_light, null))
         binding.logo.background.setTint(resources.getColor(R.color.primary_light, null))
@@ -47,10 +50,15 @@ class Splash : AppCompatActivity() {
         binding.appSlogan.setTextColor(resources.getColor(R.color.secondary_text_icon_light, null))
     }
 
-    private fun dark(){
+    private fun dark() {
         window.statusBarColor = ContextCompat.getColor(this, R.color.system_bar_dark)
         binding.root.setBackgroundColor(resources.getColor(R.color.background_dark, null))
-        binding.logo.background.setTint(resources.getColor(R.color.system_bar_light_primary_dark, null))
+        binding.logo.background.setTint(
+            resources.getColor(
+                R.color.system_bar_light_primary_dark,
+                null
+            )
+        )
         binding.appName.setTextColor(resources.getColor(R.color.primary_text_icon_dark, null))
         binding.appSlogan.setTextColor(resources.getColor(R.color.secondary_text_dark, null))
     }

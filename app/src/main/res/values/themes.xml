@@ -14,6 +14,17 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+    </style>
+
+    <!--App Bar -->
+    <style name="AppBar">
+        <item name="android:background">@color/primary_light</item>
+    </style>
+
+    <!--Bottom Nav -->
+    <style name="BottomNav">
+        <item name="android:background">@color/background_light</item>
     </style>
 
     <!--Logo -->
@@ -24,6 +35,13 @@
     <!--Primary Text -->
     <style name="PrimaryText">
         <item name="android:textColor">@color/primary_text_light</item>
+        <item name="drawableTint">@color/primary_icon_light</item>
+    </style>
+
+    <!--Primary Text & Primary Icon -->
+    <style name="PrimaryTextIcon">
+        <item name="android:textColor">@color/primary_text_light</item>
+        <item name="drawableTint">@color/primary_text_light</item>
     </style>
 
     <!--Secondary Text -->

@@ -2,20 +2,24 @@ package com.iamqeshta.qeshtaexpensesapp.ui.fragments
 
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.res.ColorStateList
+import android.graphics.BlendMode
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import com.akexorcist.localizationactivity.core.LanguageSetting.setLanguage
 import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.databinding.FragmentSettingsBinding
-import com.iamqeshta.qeshtaexpensesapp.ui.activities.SettingsActivity
 import com.iamqeshta.qeshtaexpensesapp.ui.activities.Splash
 import java.util.*
+
 
 class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
@@ -35,10 +39,12 @@ class SettingsFragment : Fragment() {
 
         checkTheme()
         binding.themeSw.setOnClickListener {
-            if (binding.themeSw.isChecked) changeTheme("Dark")
+            if (binding.themeSw.isChecked)changeTheme("Dark")
             else changeTheme("Light")
         }
 
+        binding.notificationsOffTv.setTextColor(resources.getColor(R.color.focus_action_dark, null))
+        
         return binding.root
     }
 
@@ -56,10 +62,14 @@ class SettingsFragment : Fragment() {
         edit.apply()
         startActivity(
             Intent(
-                activity!!,
+                context,
                 Splash::class.java
-            ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         )
+
+        /*val intent = Intent(activity, Splash::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)*/
     }
 
     private fun changeTheme(theme: String) {
@@ -72,6 +82,10 @@ class SettingsFragment : Fragment() {
                 Splash::class.java
             ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         )
+
+        /*val intent = Intent(activity, Splash::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)*/
     }
 
     private fun checkTheme() {

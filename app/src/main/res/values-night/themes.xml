@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.QeshtaExpenses" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Demo.BottomSheetDialog</item>
         <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/system_bar_light_primary_dark</item>
@@ -14,7 +15,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
-        <item name="android:windowBackground">@color/background_dark</item>
+    </style>
+
+    <!--App Bar -->
+    <style name="AppBar">
+        <item name="android:background">@color/system_bar_light_primary_dark</item>
+    </style>
+
+    <!--Bottom Nav -->
+    <style name="BottomNav">
+        <item name="android:background">@color/background_dark</item>
     </style>
 
     <!--Logo -->
@@ -25,6 +35,7 @@
     <!--Primary Text -->
     <style name="PrimaryText">
         <item name="android:textColor">@color/primary_text_icon_dark</item>
+        <item name="drawableTint">@color/primary_text_icon_dark</item>
     </style>
 
     <!--Secondary Text -->
@@ -47,6 +58,22 @@
     <!--Button Sign Up -->
     <style name="ButtonSignUp">
         <item name="android:textColor">@color/background_light</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Demo" parent="">
+        <item name="cornerSizeTopRight">4dp</item>
+        <item name="cornerSizeTopLeft">4dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style
+        name="ThemeOverlay.Demo.BottomSheetDialog"
+        parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.Demo.BottomSheet</item>
+    </style>
+
+    <style name="Widget.Demo.BottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Demo</item>
     </style>
 
     <!-- MyDatePickerDialog -->

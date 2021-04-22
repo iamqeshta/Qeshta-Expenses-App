@@ -9,7 +9,7 @@
     <com.google.android.material.textview.MaterialTextView
         style="@style/PrimaryText"
         android:id="@+id/displaySettingsTv"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto_regular"
@@ -23,7 +23,7 @@
     <com.google.android.material.textview.MaterialTextView
         style="@style/PrimaryText"
         android:id="@+id/languageTv"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -32,7 +32,6 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/language"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/displaySettingsTv" />
 
@@ -69,7 +68,7 @@
     <com.google.android.material.textview.MaterialTextView
         style="@style/PrimaryText"
         android:id="@+id/themeTv"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -78,12 +77,11 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/theme"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/languageRg" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        style="@style/PrimaryText"
+        android:theme="@style/PrimaryText"
         android:id="@+id/themeSw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,7 +107,7 @@
     <com.google.android.material.textview.MaterialTextView
         style="@style/PrimaryText"
         android:id="@+id/notificationsTv"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto_regular"
@@ -123,7 +121,7 @@
     <com.google.android.material.textview.MaterialTextView
         style="@style/PrimaryText"
         android:id="@+id/remindTv"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -132,7 +130,6 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/remind_me"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/notificationsTv" />
 
@@ -146,27 +143,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/remindTv">
 
+        <com.google.android.material.button.MaterialButton
+            style="@style/PrimaryText"
+            android:id="@+id/notificationsOnBtn"
+            android:layout_marginEnd="4dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_notifications_on"
+            android:layout_width="24dp"
+            android:layout_height="24dp">
+        </com.google.android.material.button.MaterialButton>
+
         <com.google.android.material.textview.MaterialTextView
             style="@style/PrimaryText"
             android:id="@+id/notificationsOnTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:drawableStart="@drawable/ic_notifications_on"
-            android:drawablePadding="4dp"
             android:fontFamily="@font/roboto_regular"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:text="@string/on" />
 
-        <com.google.android.material.textview.MaterialTextView
+        <com.google.android.material.button.MaterialButton
+            style="@style/PrimaryText"
+            android:id="@+id/notificationsOffBtn"
+            android:layout_marginEnd="4dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_notifications_off"
+            android:layout_width="24dp"
+            android:layout_height="24dp">
+        </com.google.android.material.button.MaterialButton>
 
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/PrimaryText"
             android:id="@+id/notificationsOffTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_notifications_off"
-            android:drawablePadding="4dp"
             android:fontFamily="@font/roboto_regular"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:text="@string/off" />
 
     </LinearLayout>
@@ -186,7 +199,7 @@
     <com.google.android.material.textview.MaterialTextView
         style="@style/PrimaryText"
         android:id="@+id/privacyTv"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
@@ -195,14 +208,13 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/privacy"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/second_Line" />
 
     <com.google.android.material.textview.MaterialTextView
         style="@style/PrimaryText"
         android:id="@+id/logoutTv"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
@@ -211,7 +223,6 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/logout"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/privacyTv" />
 

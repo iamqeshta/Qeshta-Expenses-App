@@ -3,16 +3,13 @@ package com.iamqeshta.qeshtaexpensesapp.ui.fragments
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.ColorStateList
-import android.graphics.BlendMode
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import com.akexorcist.localizationactivity.core.LanguageSetting.setLanguage
 import com.iamqeshta.qeshtaexpensesapp.R
@@ -39,20 +36,41 @@ class SettingsFragment : Fragment() {
 
         checkTheme()
         binding.themeSw.setOnClickListener {
-            if (binding.themeSw.isChecked)changeTheme("Dark")
+            if (binding.themeSw.isChecked) changeTheme("Dark")
             else changeTheme("Light")
         }
 
-        binding.notificationsOffTv.setTextColor(resources.getColor(R.color.focus_action_dark, null))
-        
+        checkNotifications()
+        binding.notificationsOnBtn.setOnClickListener { turnOnOffNotifications("On") }
+        binding.notificationsOffBtn.setOnClickListener { turnOnOffNotifications("Off") }
+
+        binding.privacyTv.setOnClickListener {
+            Toast.makeText(activity, "Privacy", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.logoutTv.setOnClickListener { confirmDialogForLogout() }
+
         return binding.root
     }
 
     private fun checkLanguage() {
-        if (sharedPreferences.getString("LANGUAGE", null) == "en")
+        if (sharedPreferences.getString("LANGUAGE", null) == "en") {
             binding.englishRb.isChecked = true
-        else if (sharedPreferences.getString("LANGUAGE", null) == "ar")
+            binding.arabicRb.buttonTintList = ColorStateList.valueOf(
+                resources.getColor(
+                    R.color.disabled_text_icon_dark,
+                    null
+                )
+            )
+        } else if (sharedPreferences.getString("LANGUAGE", null) == "ar") {
             binding.arabicRb.isChecked = true
+            binding.englishRb.buttonTintList = ColorStateList.valueOf(
+                resources.getColor(
+                    R.color.disabled_text_icon_dark,
+                    null
+                )
+            )
+        }
     }
 
     private fun changeLanguage(lang: String) {
@@ -60,32 +78,14 @@ class SettingsFragment : Fragment() {
         val edit = sharedPreferences.edit()
         edit.putString("LANGUAGE", lang)
         edit.apply()
-        startActivity(
-            Intent(
-                context,
-                Splash::class.java
-            ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-        )
-
-        /*val intent = Intent(activity, Splash::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
-        startActivity(intent)*/
+        restartApp()
     }
 
     private fun changeTheme(theme: String) {
         val edit = sharedPreferences.edit()
         edit.putString("THEME", theme)
         edit.apply()
-        startActivity(
-            Intent(
-                activity!!,
-                Splash::class.java
-            ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        )
-
-        /*val intent = Intent(activity, Splash::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
-        startActivity(intent)*/
+        restartApp()
     }
 
     private fun checkTheme() {
@@ -96,13 +96,86 @@ class SettingsFragment : Fragment() {
 
     }
 
-    private fun confirmDialog(lang: String) {
+    private fun checkNotifications() {
+        if (sharedPreferences.getString("THEME", null) == "Light") {
+            if (sharedPreferences.getString("NOTIFICATIONS", null) == "On") {
+                binding.notificationsOnBtn.backgroundTintList =
+                    ColorStateList.valueOf(resources.getColor(R.color.focus_action_light, null))
+                binding.notificationsOffBtn.backgroundTintList =
+                    ColorStateList.valueOf(
+                        resources.getColor(
+                            R.color.secondary_text_icon_light,
+                            null
+                        )
+                    )
+            } else if (sharedPreferences.getString("NOTIFICATIONS", null) == "Off") {
+                binding.notificationsOffBtn.backgroundTintList =
+                    ColorStateList.valueOf(resources.getColor(R.color.focus_action_light, null))
+                binding.notificationsOnBtn.backgroundTintList =
+                    ColorStateList.valueOf(
+                        resources.getColor(
+                            R.color.secondary_text_icon_light,
+                            null
+                        )
+                    )
+            }
+        } else if (sharedPreferences.getString("THEME", null) == "Dark") {
+            if (sharedPreferences.getString("NOTIFICATIONS", null) == "On") {
+                binding.notificationsOnBtn.backgroundTintList =
+                    ColorStateList.valueOf(resources.getColor(R.color.focus_action_dark, null))
+                binding.notificationsOffBtn.backgroundTintList =
+                    ColorStateList.valueOf(
+                        resources.getColor(
+                            R.color.disabled_text_icon_dark,
+                            null
+                        )
+                    )
+            } else if (sharedPreferences.getString("NOTIFICATIONS", null) == "Off") {
+                binding.notificationsOffBtn.backgroundTintList =
+                    ColorStateList.valueOf(resources.getColor(R.color.focus_action_dark, null))
+                binding.notificationsOnBtn.backgroundTintList =
+                    ColorStateList.valueOf(
+                        resources.getColor(
+                            R.color.disabled_text_icon_dark,
+                            null
+                        )
+                    )
+            }
+        }
+    }
+
+    private fun turnOnOffNotifications(action: String) {
+        val edit = sharedPreferences.edit()
+        edit.putString("NOTIFICATIONS", action)
+        edit.apply()
+        checkNotifications()
+        if (action == "On") {
+            Toast.makeText(activity, "Notifications On", Toast.LENGTH_SHORT).show()
+
+        } else if (action == "Off") {
+            Toast.makeText(activity, "Notifications Off", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun restartApp() {
+        startActivity(
+            Intent(
+                activity!!,
+                Splash::class.java
+            ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        )
+    }
+
+    private fun confirmDialogForLogout() {
         val dialog = AlertDialog.Builder(activity!!)
-        dialog.setTitle("Title")
-        dialog.setMessage("Message")
+        dialog.setTitle(resources.getString(R.string.logout))
+        dialog.setMessage(resources.getString(R.string.logout_message))
         dialog.setIcon(R.drawable.ic_logo)
-        dialog.setPositiveButton("Yes") { _, _ -> }
-        dialog.setNegativeButton("No") { _, _ -> }
+        dialog.setPositiveButton(resources.getString(R.string.yes)) { _, _ ->
+            activity!!.finish()
+            restartApp()
+        }
+        dialog.setNegativeButton(resources.getString(R.string.no)) { _, _ -> }
         val alertDialog: AlertDialog = dialog.create()
         alertDialog.show()
     }

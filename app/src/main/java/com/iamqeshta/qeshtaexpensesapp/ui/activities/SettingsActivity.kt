@@ -1,5 +1,6 @@
 package com.iamqeshta.qeshtaexpensesapp.ui.activities
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -11,6 +12,7 @@ import com.iamqeshta.qeshtaexpensesapp.ui.fragments.SettingsFragment
 
 class SettingsActivity : LocalizationActivity() {
     private lateinit var binding: ActivitySettingsBinding
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
@@ -21,6 +23,7 @@ class SettingsActivity : LocalizationActivity() {
         binding.appBar.menuIcon.setOnClickListener {
             finish()
         }
+        checkTheme()
 
         switchFragment(SettingsFragment())
         binding.appBar.pageTitle.text = getString(R.string.settings)
@@ -43,5 +46,12 @@ class SettingsActivity : LocalizationActivity() {
     private fun switchFragment(fragment: Fragment) {
         val fm = supportFragmentManager
         fm.beginTransaction().replace(R.id.container, fragment).commit()
+    }
+
+    private fun checkTheme() {
+        sharedPreferences = getSharedPreferences("SETTINGS_APP", MODE_PRIVATE)
+        if (sharedPreferences.getString("THEME", null) == "Dark")
+            binding.bottomNav.setBackgroundColor(resources.getColor(R.color.background_dark, null))
+
     }
 }

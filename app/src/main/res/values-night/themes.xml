@@ -36,6 +36,9 @@
     <style name="PrimaryText">
         <item name="android:textColor">@color/primary_text_icon_dark</item>
         <item name="drawableTint">@color/primary_text_icon_dark</item>
+        <item name="buttonTint">@color/focus_action_dark</item>
+        <item name="colorControlActivated">@color/focus_action_dark</item>
+        <item name="backgroundTint">@color/disabled_text_icon_dark</item>
     </style>
 
     <!--Secondary Text -->

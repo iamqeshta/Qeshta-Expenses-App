@@ -53,5 +53,8 @@
     <string name="off">إيقاف</string>
     <string name="privacy">الخصوصية</string>
     <string name="logout">تسجيل الخروج</string>
+    <string name="logout_message">هل أنت متأكد من الخروج؟</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
 
 </resources>

@@ -53,5 +53,8 @@
     <string name="off">Off</string>
     <string name="privacy">Privacy</string>
     <string name="logout">Logout</string>
+    <string name="logout_message">Are you sure exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>

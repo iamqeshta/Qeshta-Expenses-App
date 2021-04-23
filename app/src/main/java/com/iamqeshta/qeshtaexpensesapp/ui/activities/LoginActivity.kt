@@ -2,15 +2,10 @@ package com.iamqeshta.qeshtaexpensesapp.ui.activities
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.res.ColorStateList
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContextCompat
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
-import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.databinding.ActivityLoginBinding
+import java.util.*
 
 class LoginActivity : LocalizationActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -20,13 +15,7 @@ class LoginActivity : LocalizationActivity() {
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
-
-        sharedPreferences = getSharedPreferences("SETTINGS_APP", MODE_PRIVATE)
-        //checkTheme()
-
-        startActivity(Intent(this@LoginActivity, MyExpensesActivity::class.java))
-        finishAndRemoveTask()
-
+        refreshUIForDarkMode()
 
         binding.loginBtn.setOnClickListener {
             startActivity(Intent(this@LoginActivity, MyExpensesActivity::class.java))
@@ -37,37 +26,13 @@ class LoginActivity : LocalizationActivity() {
         }
     }
 
-    private fun checkTheme() {
-        if (sharedPreferences.getString("THEME", null) == "Light")
-            light()
-
-        else if (sharedPreferences.getString("THEME", null) == "Dark")
-            dark()
-    }
-
-    private fun light() {
-        binding.logo.background.setTint(resources.getColor(R.color.primary_light, null))
-        binding.appName.setTextColor(resources.getColor(R.color.primary_text_light, null))
-        binding.appSlogan.setTextColor(resources.getColor(R.color.secondary_text_icon_light, null))
-    }
-
-    private fun dark() {
-        binding.logo.background.setTint(resources.getColor(R.color.system_bar_light_primary_dark, null))
-        binding.appName.setTextColor(resources.getColor(R.color.primary_text_icon_dark, null))
-        binding.appSlogan.setTextColor(resources.getColor(R.color.secondary_text_dark, null))
-        binding.email.boxStrokeColor = resources.getColor(R.color.system_bar_light_primary_dark, null)
-        binding.email.hintTextColor = ColorStateList.valueOf(resources.getColor(R.color.system_bar_light_primary_dark, null))
-        binding.emailEdt.setTextColor(resources.getColor(R.color.primary_text_icon_dark, null))
-
-        binding.password.boxStrokeColor = resources.getColor(R.color.system_bar_light_primary_dark, null)
-        binding.password.hintTextColor = ColorStateList.valueOf(resources.getColor(R.color.system_bar_light_primary_dark, null))
-        //binding.password
-        binding.passwordEdt.setTextColor(resources.getColor(R.color.primary_text_icon_dark, null))
-
-        binding.rememberPassword.setTextColor(resources.getColor(R.color.primary_text_icon_dark, null))
-        binding.loginBtn.setTextColor(resources.getColor(R.color.primary_text_icon_dark, null))
-        binding.loginBtn.setBackgroundColor(resources.getColor(R.color.background_dark, null))
-        binding.loginBtn.setStrokeColorResource(R.color.system_bar_light_primary_dark)
-        binding.signUpBtn.setBackgroundColor(resources.getColor(R.color.system_bar_light_primary_dark, null))
+    private fun refreshUIForDarkMode(){
+        sharedPreferences = getSharedPreferences("SETTINGS_APP", MODE_PRIVATE)
+        if (sharedPreferences.getString("LOGIN", "One") == "One" && sharedPreferences.getString("THEME", null) == "Dark"){
+            val edit = sharedPreferences.edit()
+            edit.putString("LOGIN", "Two")
+            edit.apply()
+            this.recreate()
+        }
     }
 }

@@ -102,7 +102,7 @@
 
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/remember_Password"
-        style="@style/PrimaryText"
+        style="@style/PrimaryTextIcon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/add_a_new_expense"
-        android:textColor="@color/primary_text_light"
+        style="@style/PrimaryText"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -39,17 +39,15 @@
             android:id="@+id/placeEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/row_bg_light"
+            style="@style/BottomSheetDialog"
             android:drawableStart="@drawable/ic_place"
             android:drawablePadding="12dp"
-            android:drawableTint="@color/primary_icon_light"
             android:fontFamily="@font/roboto_regular"
             android:hint="@string/place"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:padding="16dp"
-            android:singleLine="true"
-            android:textColor="@color/primary_text_light" />
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,16 +68,14 @@
             android:id="@+id/dateEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/row_bg_light"
             android:drawableStart="@drawable/ic_date"
             android:drawablePadding="12dp"
-            android:drawableTint="@color/primary_icon_light"
             android:fontFamily="@font/roboto_regular"
             android:hint="@string/date"
             android:imeOptions="actionNext"
             android:inputType="date"
             android:padding="16dp"
-            android:textColor="@color/primary_text_light" />
+            style="@style/BottomSheetDialog" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,42 +96,38 @@
             android:id="@+id/moneyEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/row_bg_light"
             android:drawableStart="@drawable/ic_money"
             android:drawablePadding="12dp"
-            android:drawableTint="@color/primary_icon_light"
             android:fontFamily="@font/roboto_regular"
             android:hint="@string/money"
             android:imeOptions="actionDone"
             android:inputType="number"
             android:padding="16dp"
-            android:textColor="@color/primary_text_light" />
+            style="@style/BottomSheetDialog" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addBtn"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        style="@style/BottomSheetDialogSaveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/save_expense"
-        android:textColor="@color/focus_action_light"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/money" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/cancelBtn"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        style="@style/BottomSheetDialogCancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/cancel"
-        android:textColor="@color/primary_text_light"
         app:layout_constraintRight_toLeftOf="@id/addBtn"
         app:layout_constraintTop_toBottomOf="@id/money" />
 

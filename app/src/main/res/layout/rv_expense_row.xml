@@ -6,7 +6,7 @@
     android:layout_marginStart="16dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="16dp"
-    app:cardBackgroundColor="@color/row_bg_light"
+    style="@style/MyCard"
     app:cardCornerRadius="4dp"
     app:cardUseCompatPadding="true"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -27,9 +27,8 @@
             android:drawablePadding="4dp"
             android:gravity="center"
             android:text="@string/example_place"
-            android:textColor="@color/primary_text_light"
+            style="@style/PrimaryText"
             app:drawableStartCompat="@drawable/ic_place"
-            app:drawableTint="@color/primary_icon_light"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,9 +42,8 @@
             android:drawablePadding="4dp"
             android:gravity="center"
             android:text="@string/example_date"
-            android:textColor="@color/primary_text_light"
+            style="@style/PrimaryText"
             app:drawableStartCompat="@drawable/ic_date"
-            app:drawableTint="@color/primary_icon_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/placeTv" />
@@ -87,10 +85,9 @@
                 android:layout_marginEnd="8dp"
                 android:gravity="center"
                 android:text="@string/edit"
-                android:textColor="@color/primary_text_light"
+                style="@style/MyCardIcon"
                 android:textSize="14sp"
-                app:drawableStartCompat="@drawable/ic_edit"
-                app:drawableTint="@color/focus_action_light" />
+                app:drawableStartCompat="@drawable/ic_edit" />
 
             <TextView
                 android:id="@+id/delete"
@@ -98,9 +95,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/delete"
-                android:textColor="@color/primary_text_light"
-                app:drawableStartCompat="@drawable/ic_delete"
-                app:drawableTint="@color/focus_action_light" />
+                style="@style/MyCardIcon"
+                app:drawableStartCompat="@drawable/ic_delete" />
 
         </LinearLayout>
 

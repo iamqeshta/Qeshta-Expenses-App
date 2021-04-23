@@ -19,10 +19,8 @@ class Splash : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
-        sharedPreferences = getSharedPreferences("SETTINGS_APP", MODE_PRIVATE)
         checkTheme()
         openActivity()
-
     }
 
     private fun openActivity() {
@@ -32,6 +30,7 @@ class Splash : AppCompatActivity() {
     }
 
     private fun checkTheme() {
+        sharedPreferences = getSharedPreferences("SETTINGS_APP", MODE_PRIVATE)
         if (sharedPreferences.getString("THEME", null) == "Light") {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             light()
@@ -39,6 +38,7 @@ class Splash : AppCompatActivity() {
         else if (sharedPreferences.getString("THEME", null) == "Dark") {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             dark()
+            checkLoginUIDarkMode()
         }
     }
 
@@ -61,5 +61,11 @@ class Splash : AppCompatActivity() {
         )
         binding.appName.setTextColor(resources.getColor(R.color.primary_text_icon_dark, null))
         binding.appSlogan.setTextColor(resources.getColor(R.color.secondary_text_dark, null))
+    }
+
+    private fun checkLoginUIDarkMode() {
+        val edit = sharedPreferences.edit()
+        edit.putString("LOGIN", "One")
+        edit.apply()
     }
 }

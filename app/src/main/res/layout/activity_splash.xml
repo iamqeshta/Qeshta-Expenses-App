@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_logo"
-            android:backgroundTint="@color/primary_light"
+            style="@style/MyLogoStyle"
             android:contentDescription="@string/logo" />
 
         <TextView
@@ -31,7 +31,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/app_name"
-            android:textColor="@color/primary_text_light"
+            style="@style/PrimaryText"
             android:textSize="24sp" />
 
         <TextView
@@ -41,7 +41,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/save_your_money"
-            android:textColor="@color/secondary_text_icon_light"
+            style="@style/SecondaryText"
             android:textSize="16sp" />
 
     </LinearLayout>

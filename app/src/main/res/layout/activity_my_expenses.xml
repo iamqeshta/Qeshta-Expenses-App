@@ -24,10 +24,11 @@
         tools:ignore="UseCompoundDrawables">
 
         <ImageView
+            style="@style/MyLogoStyle"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:contentDescription="@string/empty"
-            android:src="@drawable/ic_empty" />
+            android:background="@drawable/ic_empty" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -56,7 +57,7 @@
         android:layout_margin="16dp"
         android:contentDescription="@string/add"
         android:tint="@color/background_light"
-        app:backgroundTint="@color/focus_action_light"
+        style="@style/FAB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:rippleColor="@color/background_light"

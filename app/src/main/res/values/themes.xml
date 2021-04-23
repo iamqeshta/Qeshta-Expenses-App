@@ -69,23 +69,56 @@
         <item name="android:textColor">@color/background_light</item>
     </style>
 
+    <!--FAB -->
+    <style name="FAB" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/focus_action_light</item>
+    </style>
+
+    <!--Card -->
+    <style name="MyCard">
+        <item name="cardBackgroundColor">@color/row_bg_light</item>
+    </style>
+
+    <!--Card Icon -->
+    <style name="MyCardIcon">
+        <item name="android:textColor">@color/primary_text_light</item>
+        <item name="android:drawableTint">@color/focus_action_light</item>
+    </style>
+
+    <!--Bottom Sheet Dialog -->
+    <style name="BottomSheetDialog">
+        <item name="android:textColor">@color/primary_text_light</item>
+        <item name="backgroundTint">@color/row_bg_light</item>
+        <item name="android:drawableTint">@color/primary_icon_light</item>
+    </style>
+
+    <!--Bottom Sheet Dialog Save Button -->
+    <style name="BottomSheetDialogSaveButton" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/focus_action_light</item>
+    </style>
+
+    <!--Bottom Sheet Dialog Cancel Button -->
+    <style name="BottomSheetDialogCancelButton" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/secondary_text_icon_light</item>
+    </style>
+
+    <!--Bottom Sheet Dialog Theme-->
     <style name="ShapeAppearanceOverlay.Demo" parent="">
         <item name="cornerSizeTopRight">4dp</item>
         <item name="cornerSizeTopLeft">4dp</item>
         <item name="cornerFamily">rounded</item>
     </style>
-
     <style
         name="ThemeOverlay.Demo.BottomSheetDialog"
         parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/Widget.Demo.BottomSheet</item>
     </style>
-
     <style name="Widget.Demo.BottomSheet" parent="Widget.MaterialComponents.BottomSheet">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Demo</item>
+        <item name="android:background">@color/background_light</item>
     </style>
 
-    <!-- MyDatePickerDialog -->
+    <!-- My Date Picker Dialog -->
     <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
         <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
         <item name="android:textColorPrimaryInverse">@color/background_light</item> <!-- header date, month color && calendar text highlight color -->
@@ -94,11 +127,11 @@
         <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerButtonStyle</item>
         <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerButtonStyle</item>
     </style>
-    <style name="DatePickerButtonStyle" parent="Base.Widget.AppCompat.Button.Borderless">
-        <item name="android:textColor">@color/focus_action_light</item>
-    </style>
     <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
         <item name="android:headerBackground">@color/primary_light</item> <!-- header background color -->
+    </style>
+    <style name="DatePickerButtonStyle" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/focus_action_light</item>
     </style>
 
 </resources>

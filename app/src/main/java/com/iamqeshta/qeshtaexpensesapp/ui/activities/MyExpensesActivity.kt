@@ -2,6 +2,7 @@ package com.iamqeshta.qeshtaexpensesapp.ui.activities
 
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,12 +20,14 @@ import java.util.*
 
 class MyExpensesActivity : LocalizationActivity() {
     private lateinit var binding: ActivityMyExpensesBinding
+    private lateinit var sharedPreferences: SharedPreferences
     private val expensesList = ArrayList<Expense>()
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMyExpensesBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
+        checkLoginUIDarkMode()
 
         binding.appBar.menuIcon.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
@@ -76,6 +79,13 @@ class MyExpensesActivity : LocalizationActivity() {
             binding.linearEmptyStatus.visibility = View.GONE
             binding.expensesRv.visibility = View.VISIBLE
         }
+    }
+
+    private fun checkLoginUIDarkMode() {
+        sharedPreferences = getSharedPreferences("SETTINGS_APP", MODE_PRIVATE)
+        val edit = sharedPreferences.edit()
+        edit.putString("LOGIN", "Two")
+        edit.apply()
     }
 
 }

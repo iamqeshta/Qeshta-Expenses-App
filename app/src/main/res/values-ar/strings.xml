@@ -19,6 +19,7 @@
     <string name="error">البريد الإلكتروني أو كلمة المرور غير صحيحة !</string>
     <string name="required">مطلوب</string>
     <string name="not_match">كلمة المرور غير متطابقة</string>
+    <string name="saved_successfully">تم الحفظ بنجاح</string>
 
     <!--Home-->
     <string name="menu">قائمة</string>

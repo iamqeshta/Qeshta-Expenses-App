@@ -1,8 +1,8 @@
 package com.iamqeshta.qeshtaexpensesapp.ui.activities
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Toast
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
 import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.databinding.ActivitySignUpBinding
@@ -42,7 +42,10 @@ class SignUpActivity : LocalizationActivity() {
                 user.uEmail = email
                 user.uPassword = password
                 DatabaseClient.getInstance(this)!!.appDatabase.userDao().insertUser(user)
-                Toast.makeText(this, "done", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
+                intent.putExtra("EMAIL", email)
+                intent.putExtra("PASSWORD", password)
+                startActivity(intent)
                 finish()
             }
         }

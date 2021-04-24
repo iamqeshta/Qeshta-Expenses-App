@@ -45,6 +45,11 @@ class LoginActivity : LocalizationActivity() {
     }
 
     private fun checkLogin() {
+        val newUser = intent.extras
+        if(newUser != null){
+            binding.emailEdt.setText(newUser.getString("EMAIL"))
+            binding.passwordEdt.setText(newUser.getString("PASSWORD"))
+        }
         if (sharedPreferences.getString(
                 "EMAIL",
                 null

@@ -19,6 +19,7 @@
     <string name="error">Email or Password is incorrect !</string>
     <string name="required">required</string>
     <string name="not_match">The password does not match</string>
+    <string name="saved_successfully">Saved successfully</string>
 
     <!--Home-->
     <string name="menu">Menu</string>

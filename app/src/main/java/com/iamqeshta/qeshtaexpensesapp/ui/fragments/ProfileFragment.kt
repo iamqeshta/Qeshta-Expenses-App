@@ -23,6 +23,8 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        sharedPreferences =
+            activity!!.getSharedPreferences("SETTINGS_APP", AppCompatActivity.MODE_PRIVATE)
         getUser()
         binding.saveBtn.setOnClickListener { updateUser() }
         return binding.root
@@ -47,14 +49,16 @@ class ProfileFragment : Fragment() {
                 this.user?.uEmail = email
                 this.user?.uPassword = password
                 DatabaseClient.getInstance(context)!!.appDatabase.userDao().updateUser(user!!)
-                Toast.makeText(context, R.string.update_profile, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.saved_successfully, Toast.LENGTH_SHORT).show()
+                val edit = sharedPreferences.edit()
+                edit.putString("EMAIL", email)
+                edit.putString("PASSWORD", password)
+                edit.apply()
             }
         }
     }
 
     private fun getUser() {
-        sharedPreferences =
-            activity!!.getSharedPreferences("SETTINGS_APP", AppCompatActivity.MODE_PRIVATE)
         this.user = DatabaseClient.getInstance(context)!!.appDatabase.userDao()
             .getUser(
                 sharedPreferences.getString("EMAIL", null)!!,
@@ -64,6 +68,8 @@ class ProfileFragment : Fragment() {
             binding.nameEdt.setText(user!!.uName)
             binding.mobileNumberEdt.setText(user!!.uMobile)
             binding.emailEdt.setText(user!!.uEmail)
+            binding.passwordEdt.setText(user!!.uPassword)
+            binding.confirmPasswordEdt.setText(user!!.uPassword)
         }
     }
 

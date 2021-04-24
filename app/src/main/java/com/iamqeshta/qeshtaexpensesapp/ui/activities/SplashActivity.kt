@@ -26,6 +26,7 @@ class SplashActivity : AppCompatActivity() {
             override fun onAnimationStart(p0: Animation?) {}
             override fun onAnimationEnd(p0: Animation?) {
                 startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                finish()
             }
             override fun onAnimationRepeat(p0: Animation?) {}
         })

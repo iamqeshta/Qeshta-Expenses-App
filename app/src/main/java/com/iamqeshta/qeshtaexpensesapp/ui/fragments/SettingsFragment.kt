@@ -199,6 +199,24 @@ class SettingsFragment : Fragment() {
         else if (action == "Off") binding.notificationsOffBtn.startAnimation(animation)
     }
 
+    private fun confirmDialogForLogout() {
+        val dialog = AlertDialog.Builder(activity!!)
+        dialog.setTitle(resources.getString(R.string.logout))
+        dialog.setMessage(resources.getString(R.string.logout_message))
+        dialog.setIcon(R.drawable.ic_logo)
+        dialog.setPositiveButton(resources.getString(R.string.yes)) { _, _ ->
+            val edit = sharedPreferences.edit()
+            edit.putString("EMAIL", null)
+            edit.putString("PASSWORD", null)
+            edit.apply()
+            activity!!.finish()
+            restartApp()
+        }
+        dialog.setNegativeButton(resources.getString(R.string.no)) { _, _ -> }
+        val alertDialog: AlertDialog = dialog.create()
+        alertDialog.show()
+    }
+
     private fun restartApp() {
         startActivity(
             Intent(
@@ -206,20 +224,6 @@ class SettingsFragment : Fragment() {
                 SplashActivity::class.java
             ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         )
-    }
-
-    private fun confirmDialogForLogout() {
-        val dialog = AlertDialog.Builder(activity!!)
-        dialog.setTitle(resources.getString(R.string.logout))
-        dialog.setMessage(resources.getString(R.string.logout_message))
-        dialog.setIcon(R.drawable.ic_logo)
-        dialog.setPositiveButton(resources.getString(R.string.yes)) { _, _ ->
-            activity!!.finish()
-            restartApp()
-        }
-        dialog.setNegativeButton(resources.getString(R.string.no)) { _, _ -> }
-        val alertDialog: AlertDialog = dialog.create()
-        alertDialog.show()
     }
 
     override fun onDestroyView() {

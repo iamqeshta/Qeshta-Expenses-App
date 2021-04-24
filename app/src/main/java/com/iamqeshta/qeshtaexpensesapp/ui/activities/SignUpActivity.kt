@@ -1,13 +1,13 @@
 package com.iamqeshta.qeshtaexpensesapp.ui.activities
 
-import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.service.autofill.CharSequenceTransformation
+import android.widget.Toast
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
 import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.databinding.ActivitySignUpBinding
+import com.iamqeshta.qeshtaexpensesapp.models.User
+import com.iamqeshta.qeshtaexpensesapp.roomdb.database.DatabaseClient
 
 class SignUpActivity : LocalizationActivity() {
     private lateinit var binding: ActivitySignUpBinding
@@ -19,21 +19,33 @@ class SignUpActivity : LocalizationActivity() {
         setContentView(view)
         checkLoginUIDarkMode()
 
-        binding.signUpBtn.setOnClickListener {
-            signUp()
-            //startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
-        }
+        binding.signUpBtn.setOnClickListener { signUp() }
     }
 
-    private fun signUp(){
-        /*if(binding.nameEdt.text.toString().isEmpty())
-            binding.nameEdt.error = */
-
+    private fun signUp() {
         val name = binding.nameEdt.text.toString()
         val mobile = binding.mobileNumberEdt.text.toString()
         val email = binding.emailEdt.text.toString()
         val password = binding.passwordEdt.text.toString()
         val cPassword = binding.confirmPasswordEdt.text.toString()
+
+        when {
+            name.isEmpty() -> binding.nameEdt.error = getString(R.string.required)
+            mobile.isEmpty() -> binding.mobileNumberEdt.error = getString(R.string.required)
+            email.isEmpty() -> binding.emailEdt.error = getString(R.string.required)
+            password.isEmpty() -> binding.passwordEdt.error = getString(R.string.required)
+            password != cPassword -> binding.confirmPasswordEdt.error = getString(R.string.not_match)
+            else -> {
+                val user = User()
+                user.uName = name
+                user.uMobile = mobile
+                user.uEmail = email
+                user.uPassword = password
+                DatabaseClient.getInstance(this)!!.appDatabase.userDao().insertUser(user)
+                Toast.makeText(this, "done", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+        }
     }
 
     private fun checkLoginUIDarkMode() {

@@ -3,13 +3,10 @@ package com.iamqeshta.qeshtaexpensesapp.ui.activities
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.akexorcist.localizationactivity.core.LanguageSetting.setLanguage
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
 import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.adapters.ExpenseAdapter

@@ -34,6 +34,7 @@
         app:startIconDrawable="@drawable/ic_user">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEdt"
             style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,6 +58,7 @@
         app:startIconDrawable="@drawable/ic_phone">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mobileNumberEdt"
             style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,6 +83,7 @@
         app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEdt"
             style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,6 +109,7 @@
         app:startIconDrawable="@drawable/ic_password">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
@@ -130,6 +134,7 @@
         app:startIconDrawable="@drawable/ic_password">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPasswordEdt"
             style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

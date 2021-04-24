@@ -25,7 +25,7 @@
             android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.LoginActivity"
             android:configChanges="uiMode" />
         <activity
-            android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.Splash"
+            android:name="com.iamqeshta.qeshtaexpensesapp.ui.activities.SplashActivity"
             android:configChanges="uiMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +33,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name="com.iamqeshta.qeshtaexpensesapp.services.AlarmBroadcastReceiver" />
+
+        <provider
+            android:name=".services.GenericFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
     </application>
 
 </manifest>

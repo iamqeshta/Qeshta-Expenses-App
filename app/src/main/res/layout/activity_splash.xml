@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.Splash">
+    tools:context=".ui.activities.SplashActivity">
 
     <LinearLayout
+        android:id="@+id/container_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"

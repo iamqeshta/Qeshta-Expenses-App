@@ -3,15 +3,15 @@ package com.iamqeshta.qeshtaexpensesapp.ui.activities
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.os.Handler
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.databinding.ActivitySplashBinding
 
-
-class Splash : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
     private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,13 +20,16 @@ class Splash : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         checkTheme()
-        openActivity()
-    }
 
-    private fun openActivity() {
-        Handler().postDelayed(Runnable {
-            startActivity(Intent(this@Splash, LoginActivity::class.java))
-        }, 1000)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.anim_logo)
+        animation.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(p0: Animation?) {}
+            override fun onAnimationEnd(p0: Animation?) {
+                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+            }
+            override fun onAnimationRepeat(p0: Animation?) {}
+        })
+        binding.containerLogo.startAnimation(animation)
     }
 
     private fun checkTheme() {
@@ -34,8 +37,7 @@ class Splash : AppCompatActivity() {
         if (sharedPreferences.getString("THEME", null) == "Light") {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             light()
-        }
-        else if (sharedPreferences.getString("THEME", null) == "Dark") {
+        } else if (sharedPreferences.getString("THEME", null) == "Dark") {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             dark()
             checkLoginUIDarkMode()

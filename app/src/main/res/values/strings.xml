@@ -16,6 +16,8 @@
     <string name="login">Login</string>
     <string name="sign_up">Sign Up</string>
     <string name="save">Save</string>
+    <string name="error">Email or Password is incorrect !</string>
+    <string name="required">required</string>
 
     <!--Home-->
     <string name="menu">Menu</string>
@@ -56,5 +58,8 @@
     <string name="logout_message">Are you sure exit?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="notifications_on">Notifications On</string>
+    <string name="notifications_off">Notifications Off</string>
+    <string name="notifications_message">Don"'"t forget to add today"'"s expenses</string>
 
 </resources>

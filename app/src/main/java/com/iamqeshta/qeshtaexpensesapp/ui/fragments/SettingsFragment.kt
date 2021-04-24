@@ -1,5 +1,8 @@
 package com.iamqeshta.qeshtaexpensesapp.ui.fragments
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.ColorStateList
@@ -7,6 +10,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -14,9 +19,9 @@ import androidx.fragment.app.Fragment
 import com.akexorcist.localizationactivity.core.LanguageSetting.setLanguage
 import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.databinding.FragmentSettingsBinding
-import com.iamqeshta.qeshtaexpensesapp.ui.activities.Splash
+import com.iamqeshta.qeshtaexpensesapp.services.AlarmBroadcastReceiver
+import com.iamqeshta.qeshtaexpensesapp.ui.activities.SplashActivity
 import java.util.*
-
 
 class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
@@ -150,18 +155,55 @@ class SettingsFragment : Fragment() {
         edit.apply()
         checkNotifications()
         if (action == "On") {
-            Toast.makeText(activity, "Notifications On", Toast.LENGTH_SHORT).show()
-
+            Toast.makeText(activity, R.string.notifications_on, Toast.LENGTH_SHORT).show()
+            animNotification(action)
+            startAlarmBroadcastReceiver(context)
         } else if (action == "Off") {
-            Toast.makeText(activity, "Notifications Off", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, R.string.notifications_off, Toast.LENGTH_SHORT).show()
+            animNotification(action)
+            stopAlarmBroadcastReceiver(context)
         }
+    }
+
+    private fun startAlarmBroadcastReceiver(context: Context?) {
+        val intent = Intent(context, AlarmBroadcastReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0)
+        val alarmManager = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        Objects.requireNonNull(alarmManager).cancel(pendingIntent)
+        val calendar = Calendar.getInstance()
+        calendar.timeInMillis = System.currentTimeMillis()
+        alarmManager.setRepeating(
+            AlarmManager.RTC_WAKEUP,
+            calendar.timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+    }
+
+    private fun stopAlarmBroadcastReceiver(context: Context?) {
+        val intent = Intent(context, AlarmBroadcastReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0)
+        val alarmManager = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        Objects.requireNonNull(alarmManager).cancel(pendingIntent)
+    }
+
+    private fun animNotification(action: String) {
+        val animation = AnimationUtils.loadAnimation(context, R.anim.anim_notification)
+        AnimationUtils.loadAnimation(context, R.anim.anim_notification)
+            .setAnimationListener(object : Animation.AnimationListener {
+                override fun onAnimationStart(p0: Animation?) {}
+                override fun onAnimationEnd(animation: Animation?) {}
+                override fun onAnimationRepeat(p0: Animation?) {}
+            })
+        if (action == "On") binding.notificationsOnBtn.startAnimation(animation)
+        else if (action == "Off") binding.notificationsOffBtn.startAnimation(animation)
     }
 
     private fun restartApp() {
         startActivity(
             Intent(
                 activity!!,
-                Splash::class.java
+                SplashActivity::class.java
             ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         )
     }

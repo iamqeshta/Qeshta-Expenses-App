@@ -16,6 +16,8 @@
     <string name="login">تسجيل الدخول</string>
     <string name="sign_up">إنشاء حساب</string>
     <string name="save">حفظ</string>
+    <string name="error">البريد الإلكتروني أو كلمة المرور غير صحيحة !</string>
+    <string name="required">مطلوب</string>
 
     <!--Home-->
     <string name="menu">قائمة</string>
@@ -56,5 +58,8 @@
     <string name="logout_message">هل أنت متأكد من الخروج؟</string>
     <string name="yes">نعم</string>
     <string name="no">لا</string>
+    <string name="notifications_message">لا تنسى إضافة مصاريف اليوم</string>
+    <string name="notifications_on">تشغيل الإشعارات</string>
+    <string name="notifications_off">إيقاف الإشعارات</string>
 
 </resources>

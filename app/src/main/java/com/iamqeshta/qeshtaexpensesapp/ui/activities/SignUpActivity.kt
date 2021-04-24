@@ -4,7 +4,9 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.service.autofill.CharSequenceTransformation
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
+import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.databinding.ActivitySignUpBinding
 
 class SignUpActivity : LocalizationActivity() {
@@ -18,8 +20,20 @@ class SignUpActivity : LocalizationActivity() {
         checkLoginUIDarkMode()
 
         binding.signUpBtn.setOnClickListener {
-            startActivity(Intent(this@SignUpActivity, MyExpensesActivity::class.java))
+            signUp()
+            //startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
         }
+    }
+
+    private fun signUp(){
+        /*if(binding.nameEdt.text.toString().isEmpty())
+            binding.nameEdt.error = */
+
+        val name = binding.nameEdt.text.toString()
+        val mobile = binding.mobileNumberEdt.text.toString()
+        val email = binding.emailEdt.text.toString()
+        val password = binding.passwordEdt.text.toString()
+        val cPassword = binding.confirmPasswordEdt.text.toString()
     }
 
     private fun checkLoginUIDarkMode() {

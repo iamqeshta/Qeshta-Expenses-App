@@ -65,4 +65,20 @@ class DatabaseClient(mContext: Context) {
     }
 }
 ```
+## ViewHolder Pattern with RecyclerView
+```Kotlin
+class ExpenseAdapter() :
+    RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() {
+
+    inner class ExpenseViewHolder(var binding: RvExpenseRowBinding) :
+        RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseViewHolder {
+        val binding = RvExpenseRowBinding.inflate(LayoutInflater.from(context), parent, false)
+        return ExpenseViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: ExpenseViewHolder, position: Int) { }
+}
+```
 

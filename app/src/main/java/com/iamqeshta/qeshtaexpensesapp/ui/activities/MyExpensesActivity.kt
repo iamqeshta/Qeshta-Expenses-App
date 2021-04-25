@@ -13,6 +13,7 @@ import com.iamqeshta.qeshtaexpensesapp.databinding.ActivityMyExpensesBinding
 import com.iamqeshta.qeshtaexpensesapp.models.Expense
 import com.iamqeshta.qeshtaexpensesapp.roomdb.database.DatabaseClient
 import com.iamqeshta.qeshtaexpensesapp.ui.fragments.BottomSheetDialog
+import java.text.SimpleDateFormat
 import java.util.*
 
 class MyExpensesActivity : LocalizationActivity() {
@@ -35,14 +36,8 @@ class MyExpensesActivity : LocalizationActivity() {
 
         binding.appBar.searchIcon.setOnClickListener { getCalender() }
 
-        expensesList = DatabaseClient.getInstance(this)!!.appDatabase.ExpenseDao()
-            .getAllExpenses(sharedPreferences.getInt("U_ID", 0))
-        val lm = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        binding.expensesRv.layoutManager = lm
-        bottomSheetDialog = supportFragmentManager
-        adapter = ExpenseAdapter(this, expensesList!!, bottomSheetDialog)
-        binding.expensesRv.adapter = adapter
-        checkEmptyStatus()
+        getExpenses("firstTime")
+        binding.swipeToRefresh.setOnRefreshListener { getExpenses("Refresh") }
 
         binding.addExpenseFAB.setOnClickListener {
             val bottomSheetDialog =
@@ -50,17 +45,40 @@ class MyExpensesActivity : LocalizationActivity() {
                     override fun onExpensesAdded(expense: Expense) {
                         addExpense(expense)
                     }
+
                     override fun onExpensesUpdated(expense: Expense) {}
                 })
             bottomSheetDialog.show(supportFragmentManager, bottomSheetDialog.tag)
         }
     }
 
+    private fun getExpenses(action: String) {
+        if (action == "firstTime") {
+            expensesList = DatabaseClient.getInstance(this)!!.appDatabase.ExpenseDao()
+                .getAllExpenses(sharedPreferences.getInt("U_ID", 0))
+            val lm = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            binding.expensesRv.layoutManager = lm
+            bottomSheetDialog = supportFragmentManager
+            adapter = ExpenseAdapter(this, expensesList!!, bottomSheetDialog)
+            binding.expensesRv.adapter = adapter
+
+        } else if (action == "Refresh") {
+            expensesList!!.clear()
+            expensesList!!.addAll(
+                DatabaseClient.getInstance(this)!!.appDatabase.ExpenseDao()
+                    .getAllExpenses(sharedPreferences.getInt("U_ID", 0))
+            )
+            adapter.notifyDataSetChanged()
+            binding.swipeToRefresh.isRefreshing = false
+        }
+        checkEmptyStatus()
+    }
+
     private fun addExpense(expense: Expense) {
         DatabaseClient.getInstance(this)!!.appDatabase.ExpenseDao().insertExpense(expense)
         expensesList!!.add(
             DatabaseClient.getInstance(this)!!.appDatabase.ExpenseDao()
-                .getLastExpenses(sharedPreferences.getInt("U_ID", 0))
+                .getLastExpense(sharedPreferences.getInt("U_ID", 0))
         )
         adapter.notifyDataSetChanged()
         checkEmptyStatus()
@@ -84,12 +102,19 @@ class MyExpensesActivity : LocalizationActivity() {
         val datePickerDialog = DatePickerDialog(
             this,
             { _, year, monthOfYear, dayOfMonth ->
-                // dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year
-                // output = 25/3/2021
-            },
-            mYear,
-            mMonth,
-            mDay
+                expensesList!!.clear()
+                expensesList!!.addAll(
+                    DatabaseClient.getInstance(this)!!.appDatabase.ExpenseDao().getExpensesByDate(
+                        sharedPreferences.getInt("U_ID", 0),
+                        SimpleDateFormat(
+                            "dd/MM/yyyy",
+                            Locale.ENGLISH
+                        ).parse(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)!!
+                    )
+                )
+                adapter.notifyDataSetChanged()
+                checkEmptyStatus()
+            }, mYear, mMonth, mDay
         )
         datePickerDialog.show()
     }

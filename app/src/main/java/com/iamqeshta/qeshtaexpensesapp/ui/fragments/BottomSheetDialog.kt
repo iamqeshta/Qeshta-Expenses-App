@@ -105,10 +105,7 @@ class BottomSheetDialog(
                 bottomSheetDialogBinding.dateEdt.setText(
                     dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year
                 )
-            },
-            mYear,
-            mMonth,
-            mDay
+            }, mYear, mMonth, mDay
         )
         datePickerDialog.show()
     }

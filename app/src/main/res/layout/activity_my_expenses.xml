@@ -27,8 +27,8 @@
             style="@style/MyLogoStyle"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:contentDescription="@string/empty"
-            android:background="@drawable/ic_empty" />
+            android:background="@drawable/ic_empty"
+            android:contentDescription="@string/empty" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,24 +39,31 @@
             android:textSize="24sp" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/expensesRv"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/rv_expense_row" />
+        app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/expensesRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/rv_expense_row" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addExpenseFAB"
+        style="@style/FAB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:contentDescription="@string/add"
         android:tint="@color/background_light"
-        style="@style/FAB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:rippleColor="@color/background_light"

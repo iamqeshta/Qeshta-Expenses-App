@@ -67,7 +67,7 @@ class DatabaseClient(mContext: Context) {
 ```
 ## ViewHolder Pattern with RecyclerView
 ```Kotlin
-class ExpenseAdapter() :
+class ExpenseAdapter(...) :
     RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() {
 
     inner class ExpenseViewHolder(var binding: RvExpenseRowBinding) :
@@ -78,7 +78,10 @@ class ExpenseAdapter() :
         return ExpenseViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ExpenseViewHolder, position: Int) { }
-}
+    override fun onBindViewHolder(holder: ExpenseViewHolder, position: Int) {...}
+
+    override fun getItemCount(): Int {
+        return ExpensesList.size
+    }
 ```
 

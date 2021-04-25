@@ -1,6 +1,6 @@
 # Qeshta Expenses
 > Simple management of your expenses and save your money 
-> - by recording every transaction this transaction include the place, money, and date.
+> by recording every transaction this transaction include the place, money, and date.
 
 Features of App
 ===

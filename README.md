@@ -113,4 +113,5 @@ User id | Int | @Foreign key
 ![5](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/5.jpg)
 ![6](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/6.jpg)
 ![7](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/7.jpg)
-![8](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/Thank%20You.jpg)
+![8](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/8.jpg)
+![9](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/Thank%20You.jpg)

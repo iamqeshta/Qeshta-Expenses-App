@@ -7,8 +7,8 @@
     tools:context=".ui.fragments.SettingsFragment">
 
     <com.google.android.material.textview.MaterialTextView
-        style="@style/PrimaryText"
         android:id="@+id/displaySettingsTv"
+        style="@style/PrimaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -16,13 +16,14 @@
         android:gravity="center"
         android:text="@string/display_settings"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/languageTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
-        style="@style/PrimaryText"
         android:id="@+id/languageTv"
+        style="@style/PrimaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -32,6 +33,7 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/language"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/languageRg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/displaySettingsTv" />
 
@@ -41,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/themeTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/languageTv">
@@ -66,8 +69,8 @@
     </RadioGroup>
 
     <com.google.android.material.textview.MaterialTextView
-        style="@style/PrimaryText"
         android:id="@+id/themeTv"
+        style="@style/PrimaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -77,36 +80,39 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/theme"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/themeSw"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/languageRg" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        android:theme="@style/PrimaryText"
         android:id="@+id/themeSw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/light_dark"
+        android:theme="@style/PrimaryText"
+        app:layout_constraintBottom_toTopOf="@+id/first_Line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/themeTv" />
 
     <com.google.android.material.card.MaterialCardView
-        style="@style/SecondaryIcon"
         android:id="@+id/first_Line"
+        style="@style/SecondaryIcon"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/notificationsTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/themeSw" />
 
     <com.google.android.material.textview.MaterialTextView
-        style="@style/PrimaryText"
         android:id="@+id/notificationsTv"
+        style="@style/PrimaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -114,13 +120,14 @@
         android:gravity="center"
         android:text="@string/notifications"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/remindTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/first_Line" />
 
     <com.google.android.material.textview.MaterialTextView
-        style="@style/PrimaryText"
         android:id="@+id/remindTv"
+        style="@style/PrimaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -130,6 +137,7 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/remind_me"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/notifications"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/notificationsTv" />
 
@@ -139,66 +147,70 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/second_Line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/remindTv">
 
         <com.google.android.material.button.MaterialButton
-            style="@style/PrimaryText"
             android:id="@+id/notificationsOnBtn"
-            android:layout_marginEnd="4dp"
-            android:layout_gravity="center"
-            android:background="@drawable/ic_notifications_on"
+            style="@style/PrimaryText"
             android:layout_width="24dp"
-            android:layout_height="24dp">
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/ic_notifications_on">
+
         </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.textview.MaterialTextView
-            style="@style/PrimaryText"
             android:id="@+id/notificationsOnTv"
+            style="@style/PrimaryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/roboto_regular"
-            android:layout_gravity="center"
             android:text="@string/on" />
 
         <com.google.android.material.button.MaterialButton
-            style="@style/PrimaryText"
             android:id="@+id/notificationsOffBtn"
-            android:layout_marginEnd="4dp"
-            android:layout_gravity="center"
-            android:background="@drawable/ic_notifications_off"
+            style="@style/PrimaryText"
             android:layout_width="24dp"
-            android:layout_height="24dp">
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/ic_notifications_off">
+
         </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.textview.MaterialTextView
-            style="@style/PrimaryText"
             android:id="@+id/notificationsOffTv"
+            style="@style/PrimaryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
             android:layout_gravity="center"
+            android:fontFamily="@font/roboto_regular"
             android:text="@string/off" />
 
     </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
-        style="@style/SecondaryIcon"
         android:id="@+id/second_Line"
+        style="@style/SecondaryIcon"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/privacyTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/notifications" />
 
     <com.google.android.material.textview.MaterialTextView
-        style="@style/PrimaryText"
         android:id="@+id/privacyTv"
+        style="@style/PrimaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -208,21 +220,24 @@
         android:fontFamily="@font/roboto_regular"
         android:text="@string/privacy"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/logoutTv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/second_Line" />
 
     <com.google.android.material.textview.MaterialTextView
-        style="@style/PrimaryText"
         android:id="@+id/logoutTv"
+        style="@style/PrimaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
         android:drawableStart="@drawable/ic_logout"
         android:drawablePadding="4dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/logout"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/privacyTv" />
 

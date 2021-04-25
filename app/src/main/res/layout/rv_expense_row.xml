@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MyCard"
     android:layout_width="match_parent"
     android:layout_height="152dp"
     android:layout_marginStart="16dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="16dp"
-    style="@style/MyCard"
     app:cardCornerRadius="4dp"
     app:cardUseCompatPadding="true"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -20,6 +20,7 @@
 
         <TextView
             android:id="@+id/placeTv"
+            style="@style/PrimaryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -27,13 +28,13 @@
             android:drawablePadding="4dp"
             android:gravity="center"
             android:text="@string/place"
-            style="@style/PrimaryText"
             app:drawableStartCompat="@drawable/ic_place"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/dateTv"
+            style="@style/PrimaryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -42,7 +43,6 @@
             android:drawablePadding="4dp"
             android:gravity="center"
             android:text="@string/date"
-            style="@style/PrimaryText"
             app:drawableStartCompat="@drawable/ic_date"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -80,22 +80,22 @@
 
             <TextView
                 android:id="@+id/edit"
+                style="@style/MyCardIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:gravity="center"
                 android:text="@string/edit"
-                style="@style/MyCardIcon"
                 android:textSize="14sp"
                 app:drawableStartCompat="@drawable/ic_edit" />
 
             <TextView
                 android:id="@+id/delete"
+                style="@style/MyCardIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/delete"
-                style="@style/MyCardIcon"
                 app:drawableStartCompat="@drawable/ic_delete" />
 
         </LinearLayout>

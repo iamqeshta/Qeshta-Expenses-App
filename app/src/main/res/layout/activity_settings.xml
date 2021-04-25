@@ -23,8 +23,8 @@
         app:layout_constraintTop_toBottomOf="@id/app_bar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        style="@style/BottomNav"
         android:id="@+id/bottomNav"
+        style="@style/BottomNav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

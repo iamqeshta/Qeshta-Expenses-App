@@ -13,6 +13,7 @@
         android:layout_marginTop="24dp"
         android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/name"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -53,6 +54,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/name"
+        app:layout_constraintBottom_toTopOf="@id/mobile_number"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo"
@@ -60,11 +62,11 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameEdt"
+            style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:singleLine="true"
-            style="@style/PrimaryText" />
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,6 +79,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/mobile_number"
+        app:layout_constraintBottom_toTopOf="@id/email"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name"
@@ -84,12 +87,12 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/mobileNumberEdt"
-            android:inputType="phone"
+            style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:singleLine="true"
-            style="@style/PrimaryText" />
+            android:inputType="phone"
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,6 +105,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/email"
+        app:layout_constraintBottom_toTopOf="@id/password"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mobile_number"
@@ -109,12 +113,12 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailEdt"
-            android:inputType="textEmailAddress"
+            style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:singleLine="true"
-            style="@style/PrimaryText" />
+            android:inputType="textEmailAddress"
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,6 +131,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/password"
+        app:layout_constraintBottom_toTopOf="@id/confirm_password"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email"
@@ -135,12 +140,12 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordEdt"
+            style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
             android:inputType="textPassword"
-            android:singleLine="true"
-            style="@style/PrimaryText" />
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -153,6 +158,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/confirm_password"
+        app:layout_constraintBottom_toTopOf="@id/sign_UpBtn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password"
@@ -161,26 +167,28 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/confirmPasswordEdt"
+            style="@style/PrimaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
             android:inputType="textPassword"
-            android:singleLine="true"
-            style="@style/PrimaryText" />
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/sign_UpBtn"
+        style="@style/ButtonSignUp"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/sign_up"
-        style="@style/ButtonSignUp"
         app:cornerRadius="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/confirm_password" />

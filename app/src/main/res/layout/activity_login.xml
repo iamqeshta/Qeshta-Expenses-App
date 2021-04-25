@@ -13,6 +13,7 @@
         android:layout_marginTop="56dp"
         android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/email"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -56,6 +57,7 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/email"
+        app:layout_constraintBottom_toTopOf="@id/password"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/container">
@@ -82,6 +84,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/password"
+        app:layout_constraintBottom_toTopOf="@id/remember_Password"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email"
@@ -110,6 +113,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/remember_me"
+        app:layout_constraintBottom_toTopOf="@id/loginBtn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password">
@@ -127,6 +131,7 @@
         android:fontFamily="@font/roboto_medium"
         android:text="@string/login"
         app:cornerRadius="4dp"
+        app:layout_constraintBottom_toTopOf="@id/sign_UpBtn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/remember_Password"
@@ -140,9 +145,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/sign_up"
         app:cornerRadius="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginBtn" />

@@ -19,30 +19,30 @@
 
         <ImageView
             android:id="@+id/logo"
+            style="@style/MyLogoStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_logo"
-            style="@style/MyLogoStyle"
             android:contentDescription="@string/logo" />
 
         <TextView
             android:id="@+id/appName"
+            style="@style/PrimaryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/app_name"
-            style="@style/PrimaryText"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/appSlogan"
+            style="@style/SecondaryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/save_your_money"
-            style="@style/SecondaryText"
             android:textSize="16sp" />
 
     </LinearLayout>

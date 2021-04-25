@@ -9,12 +9,12 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/add_new"
+        style="@style/PrimaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/add_a_new_expense"
-        style="@style/PrimaryText"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -37,9 +37,9 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/placeEdt"
+            style="@style/BottomSheetDialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/BottomSheetDialog"
             android:drawableStart="@drawable/ic_place"
             android:drawablePadding="12dp"
             android:fontFamily="@font/roboto_regular"
@@ -65,18 +65,18 @@
         app:layout_constraintTop_toBottomOf="@id/place">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:focusableInTouchMode="false"
             android:id="@+id/dateEdt"
+            style="@style/BottomSheetDialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_date"
             android:drawablePadding="12dp"
+            android:focusableInTouchMode="false"
             android:fontFamily="@font/roboto_regular"
             android:hint="@string/date"
             android:imeOptions="actionNext"
             android:inputType="date"
-            android:padding="16dp"
-            style="@style/BottomSheetDialog" />
+            android:padding="16dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,6 +95,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/moneyEdt"
+            style="@style/BottomSheetDialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_money"
@@ -103,8 +104,7 @@
             android:hint="@string/money"
             android:imeOptions="actionDone"
             android:inputType="number"
-            android:padding="16dp"
-            style="@style/BottomSheetDialog" />
+            android:padding="16dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

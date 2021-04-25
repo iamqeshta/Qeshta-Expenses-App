@@ -24,15 +24,15 @@ User | Type | Extra
 ------------ | ------------- | -------------
 User id | Int | @PrimaryKey & AUTO INCREMENT
 User Name | String | ---
-User Mobile | String
-User Email | String
-User Password | String
+User Mobile | String | ---
+User Email | String | ---
+User Password | String | ---
 
 ### Expense
 User | Type | Extra
 ------------ | ------------- | -------------
 Expense id | Int | @PrimaryKey & AUTO INCREMENT
-Expense Place | String
-Expense Date | Date
-Expense Money | Int
+Expense Place | String | ---
+Expense Date | Date | ---
+Expense Money | Int | ---
 User id | Int | @Foreign key

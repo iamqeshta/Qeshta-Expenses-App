@@ -47,11 +47,6 @@ User id | Int | @Foreign key
 # Design Patterns we used
 ## Singleton Pattern with Database
 ```Kotlin
-    package com.iamqeshta.qeshtaexpensesapp.roomdb.database
-
-import android.content.Context
-import androidx.room.Room
-
 class DatabaseClient(mContext: Context) {
     val appDatabase: AppDatabase =
         Room.databaseBuilder(mContext, AppDatabase::class.java, "Qeshta_Expenses")

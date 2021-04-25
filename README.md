@@ -1,4 +1,4 @@
-# Qeshta Expenses
+# Qeshta Expenses (Android App)
 ### Simple management of your expenses and save your money by recording every transaction this transaction include the place, money, and date.
 ![1](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/1.jpg)
 

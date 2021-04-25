@@ -5,12 +5,9 @@ by recording every transaction this transaction include the place, money, and da
 
 Features of App
 ===
-- Designed according to guidelines [Material Design](https://material.io/design)
-- Developed by [Room Database](https://developer.android.com/training/data-storage/room)
-- Developed by three-way :
-1- Room Database
-2- APIs
-3- Firebase
+- Developed by [Kotlin Programming Language](https://kotlinlang.org/).
+- Designed according to google guidelines [Material Design](https://material.io/design).
+- Developed by [Room Database](https://developer.android.com/training/data-storage/room).
 - Is Open Source on GitHub.
 - Is Free without Ads on Google Play Store.
 - Filtering search by date.

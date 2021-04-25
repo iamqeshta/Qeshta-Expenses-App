@@ -25,33 +25,9 @@ Tools
 - [Adobe Xd](https://www.adobe.com/products/xd.html) for UI/UX Design .
 - [Trello](https://trello.com/en) for manage project.
 
-### We adopted the SOLID principles specifically the Single-responsibility principle in coding
+#Hint
+## We adopted the [SOLID](https://en.wikipedia.org/wiki/SOLID) principles specifically the [Single-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle) in coding.
 
-# Database Tables
-### User
-User | Type | Extra
------------- | ------------- | -------------
-User id | Int | @PrimaryKey & AUTO INCREMENT
-User Name | String | ---
-User Mobile | String | ---
-User Email | String | ---
-User Password | String | ---
-
-### Expense
-User | Type | Extra
------------- | ------------- | -------------
-Expense id | Int | @PrimaryKey & AUTO INCREMENT
-Expense Place | String | ---
-Expense Date | Date | ---
-Expense Money | Int | ---
-User id | Int | @Foreign key
-
-# Library we use for support languages
-```Kotlin
-    implementation 'com.akexorcist:localization:1.2.9'
-```
-[Localization Library](https://github.com/akexorcist/Localization)
-> I will be very happy. If the app is translated into more than one language.
 
 # Design Patterns we used
 ## Singleton Pattern with Database
@@ -95,3 +71,28 @@ class ExpenseAdapter(...) :
 }
 ```
 
+# Database Tables
+### User
+User | Type | Extra
+------------ | ------------- | -------------
+User id | Int | @PrimaryKey & AUTO INCREMENT
+User Name | String | ---
+User Mobile | String | ---
+User Email | String | ---
+User Password | String | ---
+
+### Expense
+User | Type | Extra
+------------ | ------------- | -------------
+Expense id | Int | @PrimaryKey & AUTO INCREMENT
+Expense Place | String | ---
+Expense Date | Date | ---
+Expense Money | Int | ---
+User id | Int | @Foreign key
+
+# Library we use for support languages
+```Kotlin
+    implementation 'com.akexorcist:localization:1.2.9'
+```
+[Localization Library](https://github.com/akexorcist/Localization)
+> I will be very happy. If the app is translated into more than one language.

@@ -1,7 +1,7 @@
 # Qeshta Expenses
 Simple management of your expenses and save your money by recording every transaction this transaction include the place, money, and date.
 
-Features of App
+About App
 ===
 - Developed by [Kotlin Programming Language](https://kotlinlang.org/).
 - We use [Room Database](https://developer.android.com/training/data-storage/room) that highly recommended by Google.
@@ -12,11 +12,11 @@ Features of App
 
 Features of App
 ===
-- Filtering search by date.
-- Support languages English and Arabic.
-- Support theme Light and Dark.
-- Alert notifications.
-- Requires Android 7.0 and up.
+1. Support languages English and Arabic.
+2. Support theme Light and Dark.
+3. Filtering search by date.
+4. Alert notifications.
+5. Requires Android 7.0 and up.
 
 # Database Tables
 First Header | Second Header

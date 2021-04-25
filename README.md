@@ -25,6 +25,8 @@ Tools
 - [Adobe Xd](https://www.adobe.com/products/xd.html) for UI/UX Design .
 - [Trello](https://trello.com/en) for manage project.
 
+### We adopted the SOLID principles specifically the Single-responsibility principle in coding
+
 # Database Tables
 ### User
 User | Type | Extra

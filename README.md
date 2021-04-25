@@ -83,5 +83,6 @@ class ExpenseAdapter(...) :
     override fun getItemCount(): Int {
         return ExpensesList.size
     }
+}
 ```
 

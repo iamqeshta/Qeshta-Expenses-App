@@ -1,5 +1,5 @@
 # Qeshta Expenses
-Qeshta Expenses Android App by Room Database
+Qeshta Expenses Android App by Room Database [GitHub](http://github.com)
 
 # About App
 Simple management of your expenses and save your money 

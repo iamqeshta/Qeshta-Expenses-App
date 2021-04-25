@@ -37,20 +37,7 @@ Expense Date | Date | ---
 Expense Money | Int | ---
 User id | Int | @Foreign key
 
-# Libraries we used
+# [Library we use for support languages](https://github.com/iamqeshta/Qeshta-Expenses-App)
 ```Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation 'com.akexorcist:localization:1.2.9'
-    def room_version = "2.3.0"
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version
 ```

@@ -8,7 +8,6 @@ Features of App
 - Developed by [Kotlin Programming Language](https://kotlinlang.org/).
 - We use [Room Database](https://developer.android.com/training/data-storage/room) that highly recommended by Google.
 - Designed according to google guidelines [Material Design](https://material.io/design).
-- Developed by [Room Database](https://developer.android.com/training/data-storage/room).
 - Is Open Source on [GitHub](https://github.com/iamqeshta/Qeshta-Expenses-App).
 - Is Free without Ads on [Google Play Store](https://play.google.com/store/apps/dev?id=5847015618369379078).
 

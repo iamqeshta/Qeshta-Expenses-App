@@ -1,6 +1,6 @@
 # Qeshta Expenses (Android App)
 ### Simple management of your expenses and save your money by recording every transaction this transaction include the place, money, and date.
-![0](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/0.png)
+![0](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/res/0.png)
 
 About App
 ===
@@ -106,12 +106,12 @@ User id | Int | @Foreign key
 > I will be very happy. If the app is translated into more than one language.
 
 # App Design - [Ahmed Qeshta - Behance](https://www.behance.net/iamqeshta)
-![1](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/1.jpg)
+![1](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/res/1.jpg)
 ![2](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/2.jpg)
-![3](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/3.jpg)
-![4](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/4.jpg)
-![5](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/5.jpg)
-![6](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/6.jpg)
-![7](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/7.jpg)
-![8](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/8.jpg)
-![9](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/9.jpg)
+![3](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/res/3.jpg)
+![4](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/res/4.jpg)
+![5](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/res/5.jpg)
+![6](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/res/6.jpg)
+![7](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/res/7.jpg)
+![8](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/res/8.jpg)
+![9](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/res/9.jpg)

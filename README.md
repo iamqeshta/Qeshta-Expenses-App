@@ -7,7 +7,7 @@ by recording every transaction this transaction include the place, money, and da
 
 Features of App
 ===
-- Designed according to guidelines [Material Design]. (https://material.io/design)
+- Designed according to guidelines [Material Design](https://material.io/design)
 - Developed by three-way :
 1- Room Database
 2- APIs

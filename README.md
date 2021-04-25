@@ -37,7 +37,8 @@ Expense Date | Date | ---
 Expense Money | Int | ---
 User id | Int | @Foreign key
 
-# [Library we use for support languages](https://github.com/iamqeshta/Qeshta-Expenses-App)
+# Library we use for support languages
 ```Kotlin
     implementation 'com.akexorcist:localization:1.2.9'
 ```
+[Localization Library](https://github.com/akexorcist/Localization)

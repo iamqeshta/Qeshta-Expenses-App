@@ -18,6 +18,13 @@ Features of App
 4. Alert notifications.
 5. Requires Android 7.0 and up.
 
+Tools
+===
+- [Android Studio](https://developer.android.com/studio) for Development.
+- [GitHub Desktop](https://desktop.github.com) for simplifies development workflow.
+- [Adobe Xd](https://www.adobe.com/products/xd.html) for UI/UX Design 
+- [Trello](https://trello.com/en) for manage project.
+
 # Database Tables
 ### User
 User | Type | Extra

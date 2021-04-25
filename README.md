@@ -1,7 +1,6 @@
 # Qeshta Expenses
 ### Simple management of your expenses and save your money by recording every transaction this transaction include the place, money, and date.
-
-![Qeshta Expenses - Behance](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Qeshta%20Expenses%20-%20Behance.jpg)
+![1](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/1.jpg)
 
 About App
 ===
@@ -104,4 +103,14 @@ User id | Int | @Foreign key
     implementation 'com.akexorcist:localization:1.2.9'
 ```
 [Localization Library](https://github.com/akexorcist/Localization)
-> I will be very happy. If the app is translated into more than one language.
+> I will be very happy. If the app is translated into more than one language.> 
+
+# App Design - [Behance](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/1.jpg)
+![1](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/1.jpg)
+![2](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/2.jpg)
+![3](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/3.jpg)
+![4](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/4.jpg)
+![5](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/5.jpg)
+![6](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/6.jpg)
+![7](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/7.jpg)
+![8](https://github.com/iamqeshta/Qeshta-Expenses-App/blob/master/Design%20Documentation%20-%20Behance/Thank%20You.jpg)

@@ -23,7 +23,7 @@ Features of App
 User | Type | Extra
 ------------ | ------------- | -------------
 User id | Int | @PrimaryKey & AUTO INCREMENT
-User Name | Int
+User Name | String
 User Mobile | String
 User Email | String
 User Password | String

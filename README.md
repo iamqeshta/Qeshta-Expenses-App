@@ -20,9 +20,18 @@ Features of App
 
 # Database Tables
 ### Database Tables 
-User | Data Type                     User | Data Type
------------- | -------------         ------------ | -------------
-User id | Int                        User id | Int
+User | Data Type
+------------ | ------------- | -------------
+User id | Int | PrimaryKey
+User Name | String
+User Mobile | String
+User Email | String
+User Password | String
+
+### Database Tables 
+User | Data Type
+------------ | ------------- | -------------
+User id | Int | PrimaryKey
 User Name | String
 User Mobile | String
 User Email | String

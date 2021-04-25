@@ -43,3 +43,31 @@ User id | Int | @Foreign key
 ```
 [Localization Library](https://github.com/akexorcist/Localization)
 > I will be very happy. If the app is translated into more than one language.
+
+# Design Patterns we used
+## Singleton Pattern with Database
+```Kotlin
+    package com.iamqeshta.qeshtaexpensesapp.roomdb.database
+
+import android.content.Context
+import androidx.room.Room
+
+class DatabaseClient(mContext: Context) {
+    val appDatabase: AppDatabase =
+        Room.databaseBuilder(mContext, AppDatabase::class.java, "Qeshta_Expenses")
+            .allowMainThreadQueries().build()
+
+    companion object {
+        private var mInstance: DatabaseClient? = null
+
+        @Synchronized
+        fun getInstance(context: Context?): DatabaseClient? {
+            if (mInstance == null) {
+                mInstance = DatabaseClient(context!!)
+            }
+            return mInstance!!
+        }
+    }
+}
+```
+

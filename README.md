@@ -19,20 +19,20 @@ Features of App
 5. Requires Android 7.0 and up.
 
 # Database Tables
-### Database Tables 
-User | Data Type | Data Type
+### User
+User | Type | Extra
 ------------ | ------------- | -------------
-User id | Int | PrimaryKey
-User Name | String
+User id | Int | @PrimaryKey & AUTO INCREMENT
+User Name | Int
 User Mobile | String
 User Email | String
 User Password | String
 
-### Database Tables 
-User | Data Type | Data Type
+### Expense
+User | Type | Extra
 ------------ | ------------- | -------------
-User id | Int | PrimaryKey
-User Name | String
-User Mobile | String
-User Email | String
-User Password | String
+Expense id | Int | @PrimaryKey & AUTO INCREMENT
+Expense Place | String
+Expense Date | Date
+Expense Money | Int
+User id | Int | @Foreign key

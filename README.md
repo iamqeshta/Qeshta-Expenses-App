@@ -20,7 +20,7 @@ Features of App
 
 # Database Tables
 ### Database Tables 
-User | Data Type
+User | Data Type | Data Type
 ------------ | ------------- | -------------
 User id | Int | PrimaryKey
 User Name | String
@@ -29,7 +29,7 @@ User Email | String
 User Password | String
 
 ### Database Tables 
-User | Data Type
+User | Data Type | Data Type
 ------------ | ------------- | -------------
 User id | Int | PrimaryKey
 User Name | String

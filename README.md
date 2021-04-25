@@ -42,3 +42,5 @@ User id | Int | @Foreign key
     implementation 'com.akexorcist:localization:1.2.9'
 ```
 [Localization Library](https://github.com/akexorcist/Localization)
+> I will be very happy.
+> If the app is translated into more than one language.

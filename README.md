@@ -92,7 +92,7 @@ User Email | String | ---
 User Password | String | ---
 
 ### Expense
-User | Type | Extra
+Expense | Type | Extra
 ------------ | ------------- | -------------
 Expense id | Int | @PrimaryKey & AUTO INCREMENT
 Expense Place | String | ---

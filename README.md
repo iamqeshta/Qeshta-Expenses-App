@@ -25,7 +25,7 @@ Tools
 - [Adobe Xd](https://www.adobe.com/products/xd.html) for UI/UX Design .
 - [Trello](https://trello.com/en) for manage project.
 
-#Hint
+# Hint
 ## We adopted the [SOLID](https://en.wikipedia.org/wiki/SOLID) principles specifically the [Single-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle) in coding.
 
 

@@ -28,6 +28,7 @@ class SplashActivity : AppCompatActivity() {
                 startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
                 finish()
             }
+
             override fun onAnimationRepeat(p0: Animation?) {}
         })
         binding.containerLogo.startAnimation(animation)

@@ -23,5 +23,4 @@ class Expense {
 
     @ColumnInfo(name = "uid")
     var uid: Int? = null
-
 }

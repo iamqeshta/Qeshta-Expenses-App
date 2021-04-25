@@ -17,7 +17,6 @@ import com.iamqeshta.qeshtaexpensesapp.models.Expense
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class BottomSheetDialog(
     private var expense: Expense? = null,
     private var expensesListener: MyExpensesListener

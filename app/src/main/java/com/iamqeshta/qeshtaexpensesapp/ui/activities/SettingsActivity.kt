@@ -52,6 +52,5 @@ class SettingsActivity : LocalizationActivity() {
         sharedPreferences = getSharedPreferences("SETTINGS_APP", MODE_PRIVATE)
         if (sharedPreferences.getString("THEME", null) == "Dark")
             binding.bottomNav.setBackgroundColor(resources.getColor(R.color.background_dark, null))
-
     }
 }

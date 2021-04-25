@@ -45,15 +45,19 @@ class ExpenseAdapter(
     }
 
     private fun updateExpense(expense: Expense, position: Int) {
-        val bottomSheetDialog = BottomSheetDialog(expense, object : BottomSheetDialog.MyExpensesListener {
-            override fun onExpensesAdded(expense: Expense) {}
-            override fun onExpensesUpdated(expense: Expense) {
-                DatabaseClient.getInstance(context)!!.appDatabase.ExpenseDao().updateExpense(expense)
-                ExpensesList[position] = DatabaseClient.getInstance(context)!!.appDatabase.ExpenseDao().getExpenses(expense.eid)
-                notifyDataSetChanged()
-                Toast.makeText(context, R.string.update_successfully, Toast.LENGTH_SHORT).show()
-            }
-        })
+        val bottomSheetDialog =
+            BottomSheetDialog(expense, object : BottomSheetDialog.MyExpensesListener {
+                override fun onExpensesAdded(expense: Expense) {}
+                override fun onExpensesUpdated(expense: Expense) {
+                    DatabaseClient.getInstance(context)!!.appDatabase.ExpenseDao()
+                        .updateExpense(expense)
+                    ExpensesList[position] =
+                        DatabaseClient.getInstance(context)!!.appDatabase.ExpenseDao()
+                            .getExpenses(expense.eid)
+                    notifyDataSetChanged()
+                    Toast.makeText(context, R.string.update_successfully, Toast.LENGTH_SHORT).show()
+                }
+            })
         bottomSheetDialog.show(supportFragmentManager, bottomSheetDialog.tag)
     }
 

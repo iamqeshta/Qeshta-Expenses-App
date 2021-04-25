@@ -124,5 +124,4 @@ class MyExpensesActivity : LocalizationActivity() {
         edit.putString("LOGIN", "Two")
         edit.apply()
     }
-
 }

@@ -34,7 +34,8 @@ class SignUpActivity : LocalizationActivity() {
             mobile.isEmpty() -> binding.mobileNumberEdt.error = getString(R.string.required)
             email.isEmpty() -> binding.emailEdt.error = getString(R.string.required)
             password.isEmpty() -> binding.passwordEdt.error = getString(R.string.required)
-            password != cPassword -> binding.confirmPasswordEdt.error = getString(R.string.not_match)
+            password != cPassword -> binding.confirmPasswordEdt.error =
+                getString(R.string.not_match)
             else -> {
                 val user = User()
                 user.uName = name

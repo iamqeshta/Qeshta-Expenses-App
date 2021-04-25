@@ -5,7 +5,8 @@ import androidx.room.Room
 
 class DatabaseClient(mContext: Context) {
     val appDatabase: AppDatabase =
-        Room.databaseBuilder(mContext, AppDatabase::class.java, "Qeshta_Expenses").allowMainThreadQueries().build()
+        Room.databaseBuilder(mContext, AppDatabase::class.java, "Qeshta_Expenses")
+            .allowMainThreadQueries().build()
 
     companion object {
         private var mInstance: DatabaseClient? = null
@@ -18,5 +19,4 @@ class DatabaseClient(mContext: Context) {
             return mInstance!!
         }
     }
-
 }

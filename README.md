@@ -10,8 +10,8 @@ About App
 - Is Free without Ads on [Google Play Store](https://play.google.com/store/apps/dev?id=5847015618369379078).
 
 
-Features of App
-===
+## Features of App
+
 1. Support languages English and Arabic.
 2. Support theme Light and Dark.
 3. Filtering search by date.

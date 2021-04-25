@@ -30,7 +30,11 @@ Tools
 
 ## This app includes a lot of topics in Android :
 ### For example, but not limited
-- Intent
+- [Material Components](https://material.io/components?platform=android).
+- [Styles and Themes - Dark theme](https://developer.android.com/guide/topics/ui/look-and-feel/themes).
+- [Fragments](https://developer.android.com/guide/fragments).
+- [Intent](https://developer.android.com/reference/android/content/Intent).
+- [Notifications](https://developer.android.com/guide/topics/ui/notifiers/notifications)
 
 # Design Patterns we used
 ## Singleton Pattern with Database

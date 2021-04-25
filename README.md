@@ -6,6 +6,7 @@ by recording every transaction this transaction include the place, money, and da
 Features of App
 ===
 - Developed by [Kotlin Programming Language](https://kotlinlang.org/).
+- We use [Room Database](https://developer.android.com/training/data-storage/room) that highly recommended by Google.
 - Designed according to google guidelines [Material Design](https://material.io/design).
 - Developed by [Room Database](https://developer.android.com/training/data-storage/room).
 - Is Open Source on GitHub.

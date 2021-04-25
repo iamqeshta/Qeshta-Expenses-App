@@ -19,7 +19,11 @@ Features of App
 5. Requires Android 7.0 and up.
 
 # Database Tables
-First Header | Second Header
+### Database Tables
+User | Data Type
 ------------ | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+User id | Int
+User Name | String
+User Mobile | String
+User Email | String
+User Password | String

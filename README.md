@@ -28,6 +28,8 @@ Tools
 # Hint
 ## We adopted the [SOLID](https://en.wikipedia.org/wiki/SOLID) principles specifically the [Single-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle) in coding.
 
+## This app includes a lot of topics in Android
+#### For example, but not limited
 
 # Design Patterns we used
 ## Singleton Pattern with Database

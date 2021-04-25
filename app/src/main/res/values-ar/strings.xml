@@ -19,7 +19,7 @@
     <string name="error">البريد الإلكتروني أو كلمة المرور غير صحيحة !</string>
     <string name="required">مطلوب</string>
     <string name="not_match">كلمة المرور غير متطابقة</string>
-    <string name="saved_successfully">تم الحفظ بنجاح</string>
+    <string name="update_successfully">تم التعديل بنجاح</string>
 
     <!--Home-->
     <string name="menu">قائمة</string>
@@ -28,6 +28,9 @@
     <string name="no_expenses">لا يوجد مصروفات</string>
     <string name="add">إضافة</string>
     <string name="empty">فارع</string>
+    <string name="delete_expense">حذف المصروف</string>
+    <string name="delete_expense_successfully">تم حذف المصروفات بنجاح</string>
+    <string name="confirm_delete_expense">هل أنت متأكد من حذف هذا المصروف ؟</string>
 
     <!--Bottom Sheet Dialog, Row-->
     <string name="add_a_new_expense">إضافة مصروف جديد</string>
@@ -35,11 +38,8 @@
     <string name="save_expense">حفظ المصروف</string>
     <string name="cancel">إالغاء</string>
     <string name="place">المكان</string>
-    <string name="example_place">مول العرب</string>
     <string name="money">المصروف</string>
-    <string name="example_money">100</string>
     <string name="date">التاريخ</string>
-    <string name="example_date">19/4/2021</string>
     <string name="edit">تعديل</string>
     <string name="delete">حذف</string>
 

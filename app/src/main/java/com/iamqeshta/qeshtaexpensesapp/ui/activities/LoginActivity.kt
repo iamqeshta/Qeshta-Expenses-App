@@ -35,6 +35,7 @@ class LoginActivity : LocalizationActivity() {
         if (user != null) {
             if (binding.rememberPassword.isChecked) {
                 val edit = sharedPreferences.edit()
+                edit.putInt("U_ID", user.uid)
                 edit.putString("EMAIL", binding.emailEdt.text.toString())
                 edit.putString("PASSWORD", binding.passwordEdt.text.toString())
                 edit.apply()

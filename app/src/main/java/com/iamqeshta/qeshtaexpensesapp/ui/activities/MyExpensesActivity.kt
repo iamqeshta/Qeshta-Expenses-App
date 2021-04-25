@@ -5,71 +5,69 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
-import com.iamqeshta.qeshtaexpensesapp.R
 import com.iamqeshta.qeshtaexpensesapp.adapters.ExpenseAdapter
 import com.iamqeshta.qeshtaexpensesapp.databinding.ActivityMyExpensesBinding
 import com.iamqeshta.qeshtaexpensesapp.models.Expense
+import com.iamqeshta.qeshtaexpensesapp.roomdb.database.DatabaseClient
 import com.iamqeshta.qeshtaexpensesapp.ui.fragments.BottomSheetDialog
 import java.util.*
 
 class MyExpensesActivity : LocalizationActivity() {
     private lateinit var binding: ActivityMyExpensesBinding
     private lateinit var sharedPreferences: SharedPreferences
-    private val expensesList = ArrayList<Expense>()
+    private var expensesList: MutableList<Expense>? = null
+    private lateinit var adapter: ExpenseAdapter
+    private lateinit var bottomSheetDialog: FragmentManager
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMyExpensesBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
+        sharedPreferences = getSharedPreferences("SETTINGS_APP", MODE_PRIVATE)
         checkLoginUIDarkMode()
 
         binding.appBar.menuIcon.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
 
-        binding.appBar.searchIcon.setOnClickListener {
-            getCalender()
-        }
+        binding.appBar.searchIcon.setOnClickListener { getCalender() }
 
+        expensesList = DatabaseClient.getInstance(this)!!.appDatabase.ExpenseDao()
+            .getAllExpenses(sharedPreferences.getInt("U_ID", 0))
         val lm = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.expensesRv.layoutManager = lm
-        populateArray()
-        val adapter = ExpenseAdapter(this, expensesList)
+        bottomSheetDialog = supportFragmentManager
+        adapter = ExpenseAdapter(this, expensesList!!, bottomSheetDialog)
         binding.expensesRv.adapter = adapter
+        checkEmptyStatus()
 
-        //checkEmptyStatus(expensesList)
-
-        binding.fab.setOnClickListener {
-            val bottomSheetDialog = BottomSheetDialog()
+        binding.addExpenseFAB.setOnClickListener {
+            val bottomSheetDialog =
+                BottomSheetDialog(null, object : BottomSheetDialog.MyExpensesListener {
+                    override fun onExpensesAdded(expense: Expense) {
+                        addExpense(expense)
+                    }
+                    override fun onExpensesUpdated(expense: Expense) {}
+                })
             bottomSheetDialog.show(supportFragmentManager, bottomSheetDialog.tag)
         }
-
     }
 
-    private fun populateArray(){
-        for (i in 1..10){
-            expensesList.add(Expense(resources.getString(R.string.example_place), Calendar.getInstance().time,100))
-        }
+    private fun addExpense(expense: Expense) {
+        DatabaseClient.getInstance(this)!!.appDatabase.ExpenseDao().insertExpense(expense)
+        expensesList!!.add(
+            DatabaseClient.getInstance(this)!!.appDatabase.ExpenseDao()
+                .getLastExpenses(sharedPreferences.getInt("U_ID", 0))
+        )
+        adapter.notifyDataSetChanged()
+        checkEmptyStatus()
     }
 
-    private fun getCalender(){
-        val c = Calendar.getInstance()
-        val year = c.get(Calendar.YEAR)
-        val month = c.get(Calendar.MONTH)
-        val day = c.get(Calendar.DAY_OF_MONTH)
-
-        DatePickerDialog(this, { view, year, monthOfYear, dayOfMonth ->
-            // Display Selected date in TextView
-            //Toast.makeText(this, SimpleDateFormat("MM/dd/yyyy", Locale.US).format(c.time), Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "$dayOfMonth / $month / $year", Toast.LENGTH_SHORT).show()
-        }, year, month, day).show()
-    }
-
-    private fun checkEmptyStatus(list: List<Expense>) {
-        if (list.isEmpty()) {
+    private fun checkEmptyStatus() {
+        if (expensesList!!.isEmpty()) {
             binding.linearEmptyStatus.visibility = View.VISIBLE
             binding.expensesRv.visibility = View.GONE
         } else {
@@ -78,8 +76,25 @@ class MyExpensesActivity : LocalizationActivity() {
         }
     }
 
+    private fun getCalender() {
+        val c = Calendar.getInstance()
+        val mYear = c[Calendar.YEAR]
+        val mMonth = c[Calendar.MONTH]
+        val mDay = c[Calendar.DAY_OF_MONTH]
+        val datePickerDialog = DatePickerDialog(
+            this,
+            { _, year, monthOfYear, dayOfMonth ->
+                // dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year
+                // output = 25/3/2021
+            },
+            mYear,
+            mMonth,
+            mDay
+        )
+        datePickerDialog.show()
+    }
+
     private fun checkLoginUIDarkMode() {
-        sharedPreferences = getSharedPreferences("SETTINGS_APP", MODE_PRIVATE)
         val edit = sharedPreferences.edit()
         edit.putString("LOGIN", "Two")
         edit.apply()

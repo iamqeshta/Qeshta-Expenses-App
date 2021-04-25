@@ -49,7 +49,7 @@ class ProfileFragment : Fragment() {
                 this.user?.uEmail = email
                 this.user?.uPassword = password
                 DatabaseClient.getInstance(context)!!.appDatabase.userDao().updateUser(user!!)
-                Toast.makeText(context, R.string.saved_successfully, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.update_successfully, Toast.LENGTH_SHORT).show()
                 val edit = sharedPreferences.edit()
                 edit.putString("EMAIL", email)
                 edit.putString("PASSWORD", password)

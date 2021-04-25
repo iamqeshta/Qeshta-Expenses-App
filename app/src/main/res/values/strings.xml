@@ -19,7 +19,7 @@
     <string name="error">Email or Password is incorrect !</string>
     <string name="required">required</string>
     <string name="not_match">The password does not match</string>
-    <string name="saved_successfully">Saved successfully</string>
+    <string name="update_successfully">Update successfully</string>
 
     <!--Home-->
     <string name="menu">Menu</string>
@@ -28,6 +28,9 @@
     <string name="no_expenses">No Expenses</string>
     <string name="add">Add</string>
     <string name="empty">Empty</string>
+    <string name="delete_expense">Delete Expense</string>
+    <string name="delete_expense_successfully">Delete expense successfully</string>
+    <string name="confirm_delete_expense">Are you sure to delete this expense ?</string>
 
     <!--Bottom Sheet Dialog, Row-->
     <string name="add_a_new_expense">Add a new Expense</string>
@@ -35,11 +38,8 @@
     <string name="save_expense">Save Expense</string>
     <string name="cancel">Cancel</string>
     <string name="place">Place</string>
-    <string name="example_place">Mall Arab</string>
     <string name="money">Money</string>
-    <string name="example_money">100</string>
     <string name="date">Date</string>
-    <string name="example_date">19/4/2021</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
 

@@ -19,10 +19,10 @@ Features of App
 5. Requires Android 7.0 and up.
 
 # Database Tables
-### Database Tables
-User | Data Type
------------- | -------------
-User id | Int
+### Database Tables 
+User | Data Type                     User | Data Type
+------------ | -------------         ------------ | -------------
+User id | Int                        User id | Int
 User Name | String
 User Mobile | String
 User Email | String

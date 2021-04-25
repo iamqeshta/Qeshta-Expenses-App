@@ -1,13 +1,12 @@
 # Qeshta Expenses
-Qeshta Expenses Android App developed by [Room Database](https://developer.android.com/training/data-storage/room)
-
-# About App
+## Qeshta Expenses Android App
 Simple management of your expenses and save your money 
 by recording every transaction this transaction include the place, money, and date.
 
 Features of App
 ===
 - Designed according to guidelines [Material Design](https://material.io/design)
+- Developed by [Room Database](https://developer.android.com/training/data-storage/room)
 - Developed by three-way :
 1- Room Database
 2- APIs
